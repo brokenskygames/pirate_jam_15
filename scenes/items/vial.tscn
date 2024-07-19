@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://banmh50ewym55"]
+
+[ext_resource type="Texture2D" uid="uid://cjapesq2xe8q0" path="res://assets/art/vial.png" id="1_x4xeu"]
+
+[node name="Vial" type="Node2D"]
+
+[node name="VialRoot" type="Node2D" parent="."]
+
+[node name="VialSprite" type="Sprite2D" parent="VialRoot"]
+unique_name_in_owner = true
+position = Vector2(0, -4)
+texture = ExtResource("1_x4xeu")
