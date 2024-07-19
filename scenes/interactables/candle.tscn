@@ -53,7 +53,7 @@ scale = Vector2(0.75, 0.75)
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_np3c7")
 animation = &"unlit"
-frame_progress = 0.569453
+frame_progress = 0.295535
 
 [node name="InteractionArea" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
