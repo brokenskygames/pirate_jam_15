@@ -47,12 +47,13 @@ animations = [{
 radius = 16.0
 
 [node name="Candle" type="Area2D"]
+scale = Vector2(0.75, 0.75)
 
 [node name="CandleSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_np3c7")
-animation = &"lit"
-frame_progress = 0.205605
+animation = &"unlit"
+frame_progress = 0.569453
 
 [node name="InteractionArea" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
