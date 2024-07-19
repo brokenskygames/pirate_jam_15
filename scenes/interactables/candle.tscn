@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjvubxvp1t3hd"]
+
+[ext_resource type="Texture2D" uid="uid://ci8h12btmn2j2" path="res://assets/art/candle.png" id="1_nhjt3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73k6l"]
+atlas = ExtResource("1_nhjt3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwq3e"]
+atlas = ExtResource("1_nhjt3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48tvj"]
+atlas = ExtResource("1_nhjt3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kmak"]
+atlas = ExtResource("1_nhjt3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_np3c7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73k6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwq3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48tvj")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kmak")
+}],
+"loop": true,
+"name": &"unlit",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cnkvn"]
+radius = 16.0
+
+[node name="Candle" type="Area2D"]
+
+[node name="CandleSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_np3c7")
+animation = &"lit"
+frame_progress = 0.205605
+
+[node name="InteractionArea" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_cnkvn")
