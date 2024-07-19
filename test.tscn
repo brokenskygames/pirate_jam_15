@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://cq5je7yk886cb"]
+[gd_scene load_steps=3 format=3 uid="uid://cq5je7yk886cb"]
+
+[ext_resource type="PackedScene" uid="uid://c2ygpoxhdr2ok" path="res://scenes/characters/player/player.tscn" id="1_wiob0"]
+[ext_resource type="PackedScene" uid="uid://banmh50ewym55" path="res://scenes/items/vial.tscn" id="2_cp3h0"]
 
 [node name="test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wiob0")]
+position = Vector2(20, 19)
+
+[node name="Vial" parent="." instance=ExtResource("2_cp3h0")]
+position = Vector2(11, 19)
