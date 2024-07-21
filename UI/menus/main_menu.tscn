@@ -1,4 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dok8emds0xdxk"]
+[gd_scene load_steps=9 format=3 uid="uid://dok8emds0xdxk"]
+
+[ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_jcfpm"]
+[ext_resource type="Script" path="res://UI/menus/main_menu.gd" id="1_sj5tw"]
+[ext_resource type="Texture2D" uid="uid://xmjyfyuvxtbo" path="res://assets/art/player/plague_dr_title.png" id="3_noiff"]
+[ext_resource type="Texture2D" uid="uid://bbmorkf4p4s2h" path="res://assets/art/items/element_icons.png" id="4_e4tgi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2plxb"]
+font_size = 120
 
 [sub_resource type="Animation" id="Animation_ndfun"]
 length = 0.001
@@ -135,90 +143,124 @@ _data = {
 }
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_sj5tw")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_jcfpm")
+centered = false
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="UI"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ButtonBackgroundPanel" type="Panel" parent="UI/Control"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -48.0
-offset_right = 96.0
+offset_left = -191.0
+offset_top = -503.0
+offset_right = 209.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="UI/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/ButtonBackgroundPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 64.0
-offset_top = -24.0
-offset_right = -64.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 96.0
-offset_bottom = 108.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
 alignment = 1
 
-[node name="StartButton" type="Button" parent="UI/Control/Panel/VBoxContainer"]
+[node name="StartButton" type="Button" parent="UI/Control/ButtonBackgroundPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Start"
 
-[node name="StoryButton" type="Button" parent="UI/Control/Panel/VBoxContainer"]
+[node name="StoryButton" type="Button" parent="UI/Control/ButtonBackgroundPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Story"
 
-[node name="ControlsButton" type="Button" parent="UI/Control/Panel/VBoxContainer"]
+[node name="ControlsButton" type="Button" parent="UI/Control/ButtonBackgroundPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Controls"
 
-[node name="Options" type="Button" parent="UI/Control/Panel/VBoxContainer"]
+[node name="Options" type="Button" parent="UI/Control/ButtonBackgroundPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="UI/Control/Panel/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="UI/Control/ButtonBackgroundPanel/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 60
 text = "Quit"
 
+[node name="Label1" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 163.0
+offset_right = 457.0
+offset_bottom = 328.0
+text = "Vial
+"
+label_settings = SubResource("LabelSettings_2plxb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/Control"]
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 168.0
+offset_right = 1834.0
+offset_bottom = 333.0
+text = "Elements"
+label_settings = SubResource("LabelSettings_2plxb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Root" type="Node2D" parent="."]
-position = Vector2(160, 48)
+position = Vector2(964, 278)
+scale = Vector2(5, 5)
 
 [node name="CharSprite" type="Sprite2D" parent="Root"]
 scale = Vector2(2, 2)
+texture = ExtResource("3_noiff")
 
 [node name="Pivot" type="Marker2D" parent="Root"]
 
 [node name="FireSprite" type="Sprite2D" parent="Root/Pivot"]
 position = Vector2(0, 40)
+texture = ExtResource("4_e4tgi")
 hframes = 6
 frame = 2
 
 [node name="WaterSprite" type="Sprite2D" parent="Root/Pivot"]
 position = Vector2(40, 0)
+texture = ExtResource("4_e4tgi")
 hframes = 6
 frame = 1
 
 [node name="AirSprite" type="Sprite2D" parent="Root/Pivot"]
 position = Vector2(-40, 0)
+texture = ExtResource("4_e4tgi")
 hframes = 6
 frame = 3
 
 [node name="EarthSprite" type="Sprite2D" parent="Root/Pivot"]
 position = Vector2(0, -40)
+texture = ExtResource("4_e4tgi")
 hframes = 6
 frame = 4
 

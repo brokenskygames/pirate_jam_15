@@ -85,10 +85,10 @@ process_mode = 1
 layer = 8
 
 [node name="ControlOverlay" parent="UI" instance=ExtResource("5_3p0ab")]
-unique_name_in_owner = true
+process_mode = 1
 
 [node name="MixMenu" parent="UI" instance=ExtResource("5_lmkor")]
-process_mode = 1
+process_mode = 3
 layer = 5
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_jf6fc")]
