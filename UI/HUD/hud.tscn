@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://477gakkela1w"]
+[gd_scene load_steps=10 format=3 uid="uid://477gakkela1w"]
 
 [ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_6av76"]
 [ext_resource type="Texture2D" uid="uid://bdu18v3lprylu" path="res://assets/art/items/via_pressed.png" id="2_ovml3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dnhnh5xvnwvav" path="res://assets/art/items/green_vial.png" id="6_rgrq4"]
 [ext_resource type="Texture2D" uid="uid://xyn6iwn6pqu8" path="res://assets/art/items/brown_vial.png" id="7_sux4n"]
 [ext_resource type="Texture2D" uid="uid://clo6706pa3mgw" path="res://assets/art/items/purple_vial.png" id="8_1cbnb"]
+[ext_resource type="Texture2D" uid="uid://dus5aya120jhq" path="res://assets/art/items/vial.png" id="9_5s17e"]
 
 [node name="HUD" type="CanvasLayer"]
 layer = 10
@@ -207,3 +208,38 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "5"
 fit_content = true
+
+[node name="VialPanel6" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+
+[node name="OpenMixMenu" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_5s17e")
+texture_pressed = ExtResource("2_ovml3")
+texture_hover = ExtResource("3_l0t3w")
+stretch_mode = 5
+
+[node name="ButtonNumber5" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel6/OpenMixMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "R"
+fit_content = true
+
+[connection signal="pressed" from="Panel/MarginContainer/HBoxContainer/VialPanel6/OpenMixMenu" to="." method="_on_open_mix_menu_pressed"]

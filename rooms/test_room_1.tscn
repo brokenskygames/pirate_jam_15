@@ -80,9 +80,10 @@ position = Vector2(904, 544)
 
 [node name="UI" type="Node" parent="."]
 
-[node name="HUD" parent="UI" instance=ExtResource("3_j82sh")]
+[node name="HUD" parent="UI" node_paths=PackedStringArray("mix_menu") instance=ExtResource("3_j82sh")]
 process_mode = 1
 layer = 8
+mix_menu = NodePath("../MixMenu")
 
 [node name="ControlOverlay" parent="UI" instance=ExtResource("5_3p0ab")]
 process_mode = 1
