@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgd0xr6tcrsp7"]
+[gd_scene load_steps=3 format=3 uid="uid://bgd0xr6tcrsp7"]
+
+[ext_resource type="Script" path="res://UI/menus/pause_menu.gd" id="1_0pkrr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jvoum"]
 font_size = 30
@@ -6,6 +8,8 @@ outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_0pkrr")
 
 [node name="BGShadow" type="Panel" parent="."]
 modulate = Color(0, 0, 0, 0.513726)
@@ -19,15 +23,14 @@ grow_vertical = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 1.0
-offset_right = 322.0
-offset_bottom = 175.0
+offset_right = -639.0
+offset_bottom = -359.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
+scale = Vector2(1.5, 1.5)
 
 [node name="BGMenu" type="Panel" parent="CenterContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(300, 250)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/BGMenu"]
@@ -45,6 +48,11 @@ label_settings = SubResource("LabelSettings_jvoum")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ResumeButton" type="Button" parent="CenterContainer/BGMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Resume"
+
 [node name="RestartButton" type="Button" parent="CenterContainer/BGMenu/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
@@ -59,3 +67,8 @@ text = "Options"
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/BGMenu/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/BGMenu/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CenterContainer/BGMenu/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="CenterContainer/BGMenu/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
