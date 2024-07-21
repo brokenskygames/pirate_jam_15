@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://477gakkela1w"]
 
 [ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_6av76"]
-[ext_resource type="Texture2D" uid="uid://dus5aya120jhq" path="res://assets/art/items/vial.png" id="1_f4ua7"]
 [ext_resource type="Texture2D" uid="uid://bdu18v3lprylu" path="res://assets/art/items/via_pressed.png" id="2_ovml3"]
 [ext_resource type="Texture2D" uid="uid://bocvyqunbm3v6" path="res://assets/art/items/red_vial.png" id="2_rqvgt"]
 [ext_resource type="Texture2D" uid="uid://dp6v4hfwa7e3u" path="res://assets/art/items/vial_hover.png" id="3_l0t3w"]
 [ext_resource type="Texture2D" uid="uid://c0xv1o06cev0t" path="res://assets/art/items/blue_vial.png" id="5_tmcuc"]
 [ext_resource type="Texture2D" uid="uid://dnhnh5xvnwvav" path="res://assets/art/items/green_vial.png" id="6_rgrq4"]
 [ext_resource type="Texture2D" uid="uid://xyn6iwn6pqu8" path="res://assets/art/items/brown_vial.png" id="7_sux4n"]
+[ext_resource type="Texture2D" uid="uid://clo6706pa3mgw" path="res://assets/art/items/purple_vial.png" id="8_1cbnb"]
 
 [node name="HUD" type="CanvasLayer"]
 layer = 10
@@ -181,14 +181,13 @@ layout_mode = 2
 
 [node name="VialSelect5" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel5"]
 unique_name_in_owner = true
-self_modulate = Color(0.485029, 0.198574, 0.725418, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_f4ua7")
+texture_normal = ExtResource("8_1cbnb")
 texture_pressed = ExtResource("2_ovml3")
 texture_hover = ExtResource("3_l0t3w")
 stretch_mode = 5

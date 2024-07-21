@@ -14,7 +14,6 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="MixMenu" type="CanvasLayer"]
 process_mode = 1
-visible = false
 script = ExtResource("1_hff7h")
 
 [node name="Background" type="Panel" parent="."]
