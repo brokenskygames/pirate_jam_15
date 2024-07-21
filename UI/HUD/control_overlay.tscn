@@ -1,6 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://4ex7fw4s1wae"]
+[gd_scene load_steps=3 format=3 uid="uid://dautyq5bgnv32"]
 
-[ext_resource type="Script" path="res://UI/HUD/control_overlay.gd" id="1_daiue"]
+[sub_resource type="GDScript" id="GDScript_ax04m"]
+script/source = "extends CanvasLayer
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"control_overlay\"):
+		toggle_control_overlay_visibility()
+
+func toggle_control_overlay_visibility():
+	visible = !visible
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_se8ds"]
 font_size = 30
@@ -8,7 +17,7 @@ outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [node name="ControlOverlay" type="CanvasLayer"]
-script = ExtResource("1_daiue")
+script = SubResource("GDScript_ax04m")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

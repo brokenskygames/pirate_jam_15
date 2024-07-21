@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwkxqwcgjogum"]
+[gd_scene load_steps=9 format=3 uid="uid://dwkxqwcgjogum"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_imcme"]
 [ext_resource type="Texture2D" uid="uid://dmtacqa8we73v" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ.png" id="1_s1j56"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="2_sbmfg"]
 [ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="3_j82sh"]
-[ext_resource type="PackedScene" uid="uid://4ex7fw4s1wae" path="res://UI/HUD/control_overlay.tscn" id="5_3p0ab"]
 [ext_resource type="PackedScene" uid="uid://cfb7u18ckq2tm" path="res://UI/menus/mix_menu.tscn" id="5_lmkor"]
 [ext_resource type="PackedScene" uid="uid://bgd0xr6tcrsp7" path="res://UI/menus/pause_menu.tscn" id="6_jf6fc"]
 
@@ -84,9 +83,6 @@ position = Vector2(904, 544)
 process_mode = 1
 layer = 8
 mix_menu = NodePath("../MixMenu")
-
-[node name="ControlOverlay" parent="UI" instance=ExtResource("5_3p0ab")]
-process_mode = 1
 
 [node name="MixMenu" parent="UI" instance=ExtResource("5_lmkor")]
 process_mode = 3
