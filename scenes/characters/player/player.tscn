@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://c2ygpoxhdr2ok"]
 
-[ext_resource type="Texture2D" uid="uid://c3d6mtog7kcuw" path="res://assets/art/plague_dr_16x16.png" id="1_6gsdx"]
+[ext_resource type="Texture2D" uid="uid://d0ceo5i8na6gm" path="res://assets/art/player/plague_dr_16x16.png" id="1_bwlaa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xr602"]
 size = Vector2(6, 6)
@@ -391,7 +391,8 @@ _data = {
 
 [node name="PlayerSprite" type="Sprite2D" parent="PlayerRoot"]
 position = Vector2(0, -8)
-texture = ExtResource("1_6gsdx")
+scale = Vector2(5, 5)
+texture = ExtResource("1_bwlaa")
 hframes = 4
 vframes = 4
 

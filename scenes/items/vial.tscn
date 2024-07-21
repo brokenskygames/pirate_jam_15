@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://banmh50ewym55"]
 
-[ext_resource type="Texture2D" uid="uid://cjapesq2xe8q0" path="res://assets/art/vial.png" id="1_x4xeu"]
+[ext_resource type="Texture2D" path="res://assets/art/vial.png" id="1_x4xeu"]
 
 [node name="Vial" type="Node2D"]
 

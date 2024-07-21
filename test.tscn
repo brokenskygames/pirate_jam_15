@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c2ygpoxhdr2ok" path="res://scenes/characters/player/player.tscn" id="1_wiob0"]
 [ext_resource type="PackedScene" uid="uid://bjvubxvp1t3hd" path="res://scenes/interactables/candle.tscn" id="2_ga44a"]
 [ext_resource type="PackedScene" uid="uid://b8uergh5ufntm" path="res://scenes/interactables/door.tscn" id="4_ae2u8"]
-[ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://scenes/ui/hud.tscn" id="5_mib7c"]
+[ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="5_mib7c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gaqgl"]
 resource_name = "dungeon_tiles"
