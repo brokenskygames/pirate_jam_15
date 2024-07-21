@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwkxqwcgjogum"]
+[gd_scene load_steps=6 format=3 uid="uid://dwkxqwcgjogum"]
 
 [ext_resource type="Texture2D" uid="uid://dmtacqa8we73v" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ.png" id="1_s1j56"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="2_sbmfg"]
+[ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="3_j82sh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4b4w1"]
 texture = ExtResource("1_s1j56")
@@ -59,8 +60,10 @@ sources/0 = SubResource("TileSetAtlasSource_4b4w1")
 
 [node name="TestRoom1" type="Node2D"]
 
+[node name="HUD" parent="." instance=ExtResource("3_j82sh")]
+
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-16, 32)
+position = Vector2(40, -4.76837e-07)
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_fuouk")
 format = 2

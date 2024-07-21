@@ -1,15 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://477gakkela1w"]
+[gd_scene load_steps=9 format=3 uid="uid://477gakkela1w"]
 
+[ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_6av76"]
 [ext_resource type="Texture2D" uid="uid://dus5aya120jhq" path="res://assets/art/items/vial.png" id="1_f4ua7"]
+[ext_resource type="Texture2D" uid="uid://bdu18v3lprylu" path="res://assets/art/items/via_pressed.png" id="2_ovml3"]
+[ext_resource type="Texture2D" uid="uid://bocvyqunbm3v6" path="res://assets/art/items/red_vial.png" id="2_rqvgt"]
+[ext_resource type="Texture2D" uid="uid://dp6v4hfwa7e3u" path="res://assets/art/items/vial_hover.png" id="3_l0t3w"]
+[ext_resource type="Texture2D" uid="uid://c0xv1o06cev0t" path="res://assets/art/items/blue_vial.png" id="5_tmcuc"]
+[ext_resource type="Texture2D" uid="uid://dnhnh5xvnwvav" path="res://assets/art/items/green_vial.png" id="6_rgrq4"]
+[ext_resource type="Texture2D" uid="uid://xyn6iwn6pqu8" path="res://assets/art/items/brown_vial.png" id="7_sux4n"]
 
 [node name="HUD" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_6av76")
 
 [node name="Panel" type="Panel" parent="."]
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -16.0
+offset_left = -338.0
+offset_top = -120.0
+offset_right = 335.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -18,8 +30,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -9.0
-offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 10
@@ -29,136 +39,148 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="VialPanel" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(14, 14)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="VialSelect" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel"]
-self_modulate = Color(1, 0.133333, 0, 1)
+[node name="VialSelect1" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_f4ua7")
-stretch_mode = 3
+texture_normal = ExtResource("2_rqvgt")
+texture_pressed = ExtResource("2_ovml3")
+texture_hover = ExtResource("3_l0t3w")
+stretch_mode = 5
 
-[node name="ButtonNumber1" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel/VialSelect"]
+[node name="ButtonNumber1" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel/VialSelect1"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 18.0
+offset_left = -13.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.25, 0.25)
 text = "1"
+fit_content = true
 
 [node name="VialPanel2" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(14, 14)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="VialSelect" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel2"]
-self_modulate = Color(0, 0.396078, 1, 1)
+[node name="VialSelect2" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel2"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_f4ua7")
-stretch_mode = 3
+texture_normal = ExtResource("5_tmcuc")
+texture_pressed = ExtResource("2_ovml3")
+texture_hover = ExtResource("3_l0t3w")
+stretch_mode = 5
 
-[node name="ButtonNumber2" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel2/VialSelect"]
+[node name="ButtonNumber2" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel2/VialSelect2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 18.0
+offset_left = -13.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.25, 0.25)
 text = "2"
+fit_content = true
 
 [node name="VialPanel3" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(14, 14)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="VialSelect" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel3"]
-self_modulate = Color(0.373475, 0.755144, 0.454405, 1)
+[node name="VialSelect3" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel3"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_f4ua7")
-stretch_mode = 3
+texture_normal = ExtResource("6_rgrq4")
+texture_pressed = ExtResource("2_ovml3")
+texture_hover = ExtResource("3_l0t3w")
+stretch_mode = 5
 
-[node name="ButtonNumber3" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel3/VialSelect"]
+[node name="ButtonNumber3" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel3/VialSelect3"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 18.0
+offset_left = -13.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.25, 0.25)
 text = "3"
+fit_content = true
 
 [node name="VialPanel4" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(14, 14)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="VialSelect" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel4"]
-self_modulate = Color(0.6057, 0.261874, 0, 1)
+[node name="VialSelect4" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel4"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_f4ua7")
-stretch_mode = 3
+texture_normal = ExtResource("7_sux4n")
+texture_pressed = ExtResource("2_ovml3")
+texture_hover = ExtResource("3_l0t3w")
+stretch_mode = 5
 
-[node name="ButtonNumber4" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel4/VialSelect"]
+[node name="ButtonNumber4" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel4/VialSelect4"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 18.0
+offset_left = -13.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.25, 0.25)
 text = "4"
+fit_content = true
 
 [node name="VialPanel5" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(14, 14)
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 
-[node name="VialSelect" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel5"]
+[node name="VialSelect5" type="TextureButton" parent="Panel/MarginContainer/HBoxContainer/VialPanel5"]
+unique_name_in_owner = true
 self_modulate = Color(0.485029, 0.198574, 0.725418, 1)
 layout_mode = 1
 anchors_preset = 15
@@ -167,20 +189,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("1_f4ua7")
-stretch_mode = 3
+texture_pressed = ExtResource("2_ovml3")
+texture_hover = ExtResource("3_l0t3w")
+stretch_mode = 5
 
-[node name="ButtonNumber5" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel5/VialSelect"]
+[node name="ButtonNumber5" type="RichTextLabel" parent="Panel/MarginContainer/HBoxContainer/VialPanel5/VialSelect5"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = -6.0
-offset_right = 6.0
-offset_bottom = 18.0
+offset_left = -13.0
+offset_top = -22.0
+offset_right = -4.0
+offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.25, 0.25)
 text = "5"
+fit_content = true
