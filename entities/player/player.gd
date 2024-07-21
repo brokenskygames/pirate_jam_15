@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var animation_tree : AnimationTree = sprite.get_node("AnimationTree")
 
 
-const SPEED = 600.0
+const SPEED = 450.0
 var direction : Vector2 = Vector2.ZERO
 
 func _ready():
@@ -14,7 +14,7 @@ func _ready():
 	animation_tree["parameters/idle/blend_position"] = 	[1,0]
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 
 
 	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://onuslx6wppjc"]
+[gd_scene load_steps=8 format=3 uid="uid://onuslx6wppjc"]
 
 [ext_resource type="Texture2D" uid="uid://ci8a483aew8go" path="res://assets/art/interactables/candle.png" id="1_06a7o"]
 
@@ -17,9 +17,60 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_s6kqj"]
+resource_name = "lit"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_pod76"]
+resource_name = "unlit"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4e6tm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dwmpy"]
 _data = {
-"candle_animation": SubResource("Animation_l68f2")
+"RESET": SubResource("Animation_4e6tm"),
+"candle_animation": SubResource("Animation_l68f2"),
+"lit": SubResource("Animation_s6kqj"),
+"unlit": SubResource("Animation_pod76")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3rfo5"]
@@ -31,7 +82,6 @@ radius = 30.0666
 scale = Vector2(5, 5)
 texture = ExtResource("1_06a7o")
 hframes = 4
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

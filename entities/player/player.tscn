@@ -5,7 +5,6 @@
 
 [sub_resource type="Animation" id="Animation_k6kov"]
 resource_name = "player_down_idle"
-length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -14,10 +13,22 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_7ow2k"]
@@ -36,44 +47,21 @@ tracks/0/keys = {
 "update": 1,
 "values": [6, 7]
 }
-
-[sub_resource type="Animation" id="Animation_iujei"]
-resource_name = "player_up_idle"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_e4ug7"]
-resource_name = "player_up_move"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [8, 9]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_bnn5u"]
 resource_name = "player_left_idle"
-length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -82,7 +70,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 3]
@@ -131,7 +119,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_apjlc"]
 resource_name = "player_right_idle"
-length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -185,6 +172,63 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_iujei"]
+resource_name = "player_up_idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_e4ug7"]
+resource_name = "player_up_move"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_g4vr5"]
@@ -268,10 +312,10 @@ states/idle/position = Vector2(550.8, 188.944)
 states/move/node = SubResource("AnimationNodeBlendSpace2D_vfnbe")
 states/move/position = Vector2(744.4, 186.928)
 transitions = ["idle", "move", SubResource("AnimationNodeStateMachineTransition_emlvb"), "move", "idle", SubResource("AnimationNodeStateMachineTransition_af4hb"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_5ecal")]
-graph_offset = Vector2(-218, -99)
+graph_offset = Vector2(-52.6107, 37.6964)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ayw"]
-size = Vector2(30, 55)
+size = Vector2(30, 30)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_mstbg")
@@ -279,9 +323,9 @@ script = ExtResource("1_mstbg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
 texture = ExtResource("2_3r7bj")
-flip_h = true
 hframes = 4
 vframes = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -297,5 +341,5 @@ parameters/idle/blend_position = Vector2(-0.24981, 0.44213)
 parameters/move/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.5)
+position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_h5ayw")

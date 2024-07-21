@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://477gakkela1w"]
 
-[ext_resource type="Texture2D" path="res://assets/art/vial.png" id="1_f4ua7"]
+[ext_resource type="Texture2D" uid="uid://dus5aya120jhq" path="res://assets/art/items/vial.png" id="1_f4ua7"]
 
 [node name="HUD" type="CanvasLayer"]
 
