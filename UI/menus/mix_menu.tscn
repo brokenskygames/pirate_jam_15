@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfb7u18ckq2tm"]
+[gd_scene load_steps=4 format=3 uid="uid://cfb7u18ckq2tm"]
+
+[ext_resource type="Script" path="res://UI/menus/mix_menu.gd" id="1_hff7h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_18quo"]
 font_size = 30
@@ -10,14 +12,23 @@ font_size = 60
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="VialMenu" type="CanvasLayer"]
+[node name="MixMenu" type="CanvasLayer"]
+visible = false
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+script = ExtResource("1_hff7h")
+
+[node name="Background" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.560784)
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 322.0
-offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)

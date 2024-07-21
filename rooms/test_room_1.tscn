@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwkxqwcgjogum"]
+[gd_scene load_steps=9 format=3 uid="uid://dwkxqwcgjogum"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_imcme"]
 [ext_resource type="Texture2D" uid="uid://dmtacqa8we73v" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ.png" id="1_s1j56"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="2_sbmfg"]
 [ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="3_j82sh"]
+[ext_resource type="PackedScene" uid="uid://cfb7u18ckq2tm" path="res://UI/menus/mix_menu.tscn" id="5_lmkor"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4b4w1"]
 texture = ExtResource("1_s1j56")
@@ -70,8 +71,6 @@ outline_color = Color(0, 0, 0, 1)
 texture = ExtResource("1_imcme")
 centered = false
 
-[node name="HUD" parent="." instance=ExtResource("3_j82sh")]
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(40, -4.76837e-07)
 scale = Vector2(5, 5)
@@ -82,41 +81,51 @@ layer_0/tile_data = PackedInt32Array(262153, 65536, 0, 327689, 65536, 0, 393225,
 [node name="Player" parent="." instance=ExtResource("2_sbmfg")]
 position = Vector2(904, 544)
 
-[node name="ControlOverlay" type="CanvasLayer" parent="."]
+[node name="UI" type="Node" parent="."]
 
-[node name="Control" type="Control" parent="ControlOverlay"]
+[node name="HUD" parent="UI" instance=ExtResource("3_j82sh")]
+
+[node name="ControlOverlay" type="CanvasLayer" parent="UI"]
+unique_name_in_owner = true
+
+[node name="Control" type="Control" parent="UI/ControlOverlay"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -920.0
+offset_left = 24.0
+offset_top = 19.0
+offset_right = -41.0
+offset_bottom = -867.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ControlOverlay/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ControlOverlay/Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 6
 
-[node name="Label1" type="Label" parent="ControlOverlay/Control/VBoxContainer"]
+[node name="Label1" type="Label" parent="UI/ControlOverlay/Control/VBoxContainer"]
 layout_mode = 2
 text = "WASD or arrows to move"
 label_settings = SubResource("LabelSettings_se8ds")
 
-[node name="Label2" type="Label" parent="ControlOverlay/Control/VBoxContainer"]
+[node name="Label2" type="Label" parent="UI/ControlOverlay/Control/VBoxContainer"]
 layout_mode = 2
 text = "Space to use selected vial"
 label_settings = SubResource("LabelSettings_se8ds")
 
-[node name="Label3" type="Label" parent="ControlOverlay/Control/VBoxContainer"]
+[node name="Label3" type="Label" parent="UI/ControlOverlay/Control/VBoxContainer"]
 layout_mode = 2
 text = "Press number to select vial  or use mouse
 "
 label_settings = SubResource("LabelSettings_se8ds")
 
-[node name="Label4" type="Label" parent="ControlOverlay/Control/VBoxContainer"]
+[node name="Label4" type="Label" parent="UI/ControlOverlay/Control/VBoxContainer"]
 layout_mode = 2
 text = "Press R to access mix menu
 "
 label_settings = SubResource("LabelSettings_se8ds")
+
+[node name="MixMenu" parent="UI" instance=ExtResource("5_lmkor")]
