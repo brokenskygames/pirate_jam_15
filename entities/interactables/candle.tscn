@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://onuslx6wppjc"]
+[gd_scene load_steps=11 format=3 uid="uid://onuslx6wppjc"]
 
 [ext_resource type="Texture2D" uid="uid://ci8a483aew8go" path="res://assets/art/interactables/candle.png" id="1_06a7o"]
 [ext_resource type="Script" path="res://entities/interactables/candle.gd" id="1_10i0u"]
+[ext_resource type="PackedScene" uid="uid://djhqw0cw1nt2r" path="res://effects/default_light.tscn" id="3_xpobl"]
 
 [sub_resource type="Animation" id="Animation_4e6tm"]
 length = 0.001
@@ -103,5 +104,7 @@ shape = SubResource("RectangleShape2D_v6a5f")
 [node name="TriggerShape" type="CollisionShape2D" parent="TriggerArea"]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_v1scx")
+
+[node name="DefaultLight" parent="." instance=ExtResource("3_xpobl")]
 
 [connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]

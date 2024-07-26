@@ -82,9 +82,8 @@ layer_0/tile_data = PackedInt32Array(262153, 65536, 0, 327689, 65536, 0, 393225,
 [node name="Player" parent="." instance=ExtResource("2_sbmfg")]
 position = Vector2(904, 544)
 
-[node name="Candle" parent="." node_paths=PackedStringArray("darkness_mask") instance=ExtResource("4_2mi4w")]
+[node name="Candle" parent="." instance=ExtResource("4_2mi4w")]
 position = Vector2(1407, 836)
-darkness_mask = NodePath("")
 
 [node name="UI" type="Node" parent="."]
 

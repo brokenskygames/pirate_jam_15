@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djhqw0cw1nt2r"]
+
+[ext_resource type="Texture2D" uid="uid://bfts1jlm0f8r1" path="res://assets/texture/light_mask.tres" id="1_krp1p"]
+
+[node name="DefaultLight" type="PointLight2D"]
+texture = ExtResource("1_krp1p")
