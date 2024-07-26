@@ -4,9 +4,10 @@ extends StaticBody2D
 var candle_lit := false
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("use_vial"):
-		light_candle()
+# For testing
+#func _unhandled_input(event: InputEvent) -> void:
+	#if event.is_action_pressed("use_vial"):
+		#light_candle()
 
 func light_candle():
 	animation_player.play("lit")
