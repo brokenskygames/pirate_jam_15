@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwkxqwcgjogum"]
+[gd_scene load_steps=11 format=3 uid="uid://dwkxqwcgjogum"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_imcme"]
 [ext_resource type="Texture2D" uid="uid://dmtacqa8we73v" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ.png" id="1_s1j56"]
+[ext_resource type="PackedScene" uid="uid://cfm2vw1xaaxi3" path="res://effects/darkness_mask.tscn" id="1_w5k1s"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="2_sbmfg"]
 [ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="3_j82sh"]
+[ext_resource type="PackedScene" uid="uid://onuslx6wppjc" path="res://entities/interactables/candle.tscn" id="4_2mi4w"]
 [ext_resource type="PackedScene" uid="uid://cfb7u18ckq2tm" path="res://UI/menus/mix_menu.tscn" id="5_lmkor"]
 [ext_resource type="PackedScene" uid="uid://bgd0xr6tcrsp7" path="res://UI/menus/pause_menu.tscn" id="6_jf6fc"]
 
@@ -63,6 +65,9 @@ sources/0 = SubResource("TileSetAtlasSource_4b4w1")
 
 [node name="TestRoom1" type="Node2D"]
 
+[node name="DarknessMask" parent="." instance=ExtResource("1_w5k1s")]
+unique_name_in_owner = true
+
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_imcme")
 centered = false
@@ -76,6 +81,10 @@ layer_0/tile_data = PackedInt32Array(262153, 65536, 0, 327689, 65536, 0, 393225,
 
 [node name="Player" parent="." instance=ExtResource("2_sbmfg")]
 position = Vector2(904, 544)
+
+[node name="Candle" parent="." node_paths=PackedStringArray("darkness_mask") instance=ExtResource("4_2mi4w")]
+position = Vector2(1407, 836)
+darkness_mask = NodePath("")
 
 [node name="UI" type="Node" parent="."]
 
