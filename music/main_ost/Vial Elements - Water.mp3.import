@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://decwy10r2xugd"
+path="res://.godot/imported/Vial Elements - Water.mp3-ad6a3808d278fa4f16784feec308714f.mp3str"
+
+[deps]
+
+source_file="res://music/main_ost/Vial Elements - Water.mp3"
+dest_files=["res://.godot/imported/Vial Elements - Water.mp3-ad6a3808d278fa4f16784feec308714f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

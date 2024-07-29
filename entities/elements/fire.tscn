@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://xij5b0lh26dg"]
+
+[ext_resource type="Script" path="res://entities/elements/fire.gd" id="1_owjfr"]
+[ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="2_sflg5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5svi"]
+radius = 20.0
+
+[sub_resource type="Animation" id="Animation_f828e"]
+resource_name = "fire"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 21, 22, 21, 22, 21]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bnixr"]
+_data = {
+"fire": SubResource("Animation_f828e")
+}
+
+[node name="Fire" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_owjfr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_sflg5")
+hframes = 6
+vframes = 6
+frame = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j5svi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bnixr")
+}

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://f0qpge3rakhk"]
+
+[node name="Switch" type="Area2D"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://cixsx5f02prhv"]
+
+[ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="1_e6ugc"]
+[ext_resource type="Script" path="res://entities/elements/mudball.gd" id="1_q7yr8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ehhy"]
+radius = 20.0
+
+[sub_resource type="Animation" id="Animation_51usg"]
+resource_name = "impact"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [25, 26]
+}
+
+[sub_resource type="Animation" id="Animation_63s24"]
+resource_name = "mudball"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [23, 24, 25]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ksc4w"]
+_data = {
+"impact": SubResource("Animation_51usg"),
+"mudball": SubResource("Animation_63s24")
+}
+
+[node name="Mudball" type="CharacterBody2D"]
+script = ExtResource("1_q7yr8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_e6ugc")
+hframes = 6
+vframes = 6
+frame = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_4ehhy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ksc4w")
+}

@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://beihkdht4vyls"]
+
+[ext_resource type="Script" path="res://entities/elements/fireball.gd" id="1_pw2ne"]
+[ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="2_nwnvb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii2e6"]
+radius = 17.0
+
+[sub_resource type="Animation" id="Animation_0ript"]
+resource_name = "explosion"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [19, 20]
+}
+
+[sub_resource type="Animation" id="Animation_p1u2t"]
+resource_name = "fireball"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [16, 17, 18]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drplh"]
+_data = {
+"explosion": SubResource("Animation_0ript"),
+"fireball": SubResource("Animation_p1u2t")
+}
+
+[node name="Fireball" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_pw2ne")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_nwnvb")
+hframes = 6
+vframes = 6
+frame = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ii2e6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_drplh")
+}
