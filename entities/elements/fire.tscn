@@ -28,8 +28,8 @@ _data = {
 }
 
 [node name="Fire" type="CharacterBody2D"]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 4
+collision_mask = 13
 script = ExtResource("1_owjfr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

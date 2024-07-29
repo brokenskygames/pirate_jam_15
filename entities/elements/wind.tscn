@@ -28,6 +28,8 @@ _data = {
 }
 
 [node name="Wind" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 13
 script = ExtResource("1_b3pbv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

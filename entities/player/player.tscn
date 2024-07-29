@@ -315,9 +315,11 @@ transitions = ["idle", "move", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(-52.6107, 37.6964)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ayw"]
-size = Vector2(30, 30)
+size = Vector2(30, 61)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 17
 script = ExtResource("1_mstbg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -333,6 +335,9 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_g4vr5")
+}
 tree_root = SubResource("AnimationNodeStateMachine_i4gv1")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_idle = false
@@ -341,5 +346,5 @@ parameters/idle/blend_position = Vector2(-0.24981, 0.44213)
 parameters/move/blend_position = Vector2(0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 24)
+position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_h5ayw")

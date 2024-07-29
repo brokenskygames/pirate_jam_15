@@ -6,11 +6,10 @@ func _ready():
 
 
 func _process(delta):
-	velocity = velocity.normalized() * floor(abs(velocity)/(1.2))
+	velocity = velocity.normalized() * floor(abs(velocity)/(1.8))
+
 	move_and_slide()
 
 
 func hit(_impact_velocity):
-	print(_impact_velocity)
-	print("hit")
 	velocity = _impact_velocity
