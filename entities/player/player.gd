@@ -15,6 +15,7 @@ var lightning = preload("res://entities/elements/lightning.tscn")
 var mudball = preload("res://entities/elements/mudball.tscn")
 
 
+
 const SPEED = 400.0
 var direction : Vector2 = Vector2.ZERO
 var dir_facing : Vector2 = Vector2.ZERO
@@ -43,13 +44,19 @@ func get_input():
 	if direction != Vector2.ZERO:
 		dir_facing = direction
 	velocity = direction * SPEED
-	
+	if Input.is_action_just_pressed("vial_1"):
+		equip_item = 1
+	if Input.is_action_just_pressed("vial_2"):
+		equip_item = 2
+	if Input.is_action_just_pressed("vial_3"):
+		equip_item = 3
+	if Input.is_action_just_pressed("vial_4"):
+		equip_item = 4
 	if Input.is_action_just_pressed("use_vial"):
 		print("shoot")
 		use_vial()
 
 func use_vial():
-	equip_item = 7
 	if equip_item == 1:
 		var fire_vial = fire.instantiate()
 		fire_vial.start(dir_facing,global_position)

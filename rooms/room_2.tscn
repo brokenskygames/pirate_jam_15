@@ -90,7 +90,7 @@ texture = ExtResource("2_rkvim")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6y20e")
 
-[node name="Room1" type="Node2D"]
+[node name="Room2" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_d4qp2")
