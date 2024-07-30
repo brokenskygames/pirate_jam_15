@@ -2,12 +2,12 @@
 
 [sub_resource type="Gradient" id="Gradient_efs2m"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.642857)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.701299)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [resource]
 gradient = SubResource("Gradient_efs2m")
-width = 500
-height = 500
+width = 800
+height = 800
 fill = 1
 fill_from = Vector2(0.5, 0.5)

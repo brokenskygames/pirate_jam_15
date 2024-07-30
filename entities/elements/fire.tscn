@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://xij5b0lh26dg"]
+[gd_scene load_steps=7 format=3 uid="uid://xij5b0lh26dg"]
 
 [ext_resource type="Script" path="res://entities/elements/fire.gd" id="1_owjfr"]
 [ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="2_sflg5"]
+[ext_resource type="PackedScene" uid="uid://cjg8syjtsk5tt" path="res://effects/player_light.tscn" id="3_mhf3y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5svi"]
 radius = 20.0
@@ -46,3 +47,5 @@ shape = SubResource("CircleShape2D_j5svi")
 libraries = {
 "": SubResource("AnimationLibrary_bnixr")
 }
+
+[node name="PlayerLight" parent="." instance=ExtResource("3_mhf3y")]

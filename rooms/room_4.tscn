@@ -1,10 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://iy45otdpkibt"]
+[gd_scene load_steps=23 format=3 uid="uid://iy45otdpkibt"]
 
+[ext_resource type="PackedScene" uid="uid://cfm2vw1xaaxi3" path="res://effects/darkness_mask.tscn" id="1_l1fyu"]
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_lmbuj"]
 [ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="2_pptv5"]
 [ext_resource type="Texture2D" uid="uid://bd6lngwgo25rm" path="res://assets/art/tilesets/hazard_tiles.png" id="3_ukdke"]
 [ext_resource type="Texture2D" uid="uid://crojk811uedq7" path="res://assets/art/interactables/door.png" id="4_876nh"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="5_ih12e"]
+[ext_resource type="PackedScene" uid="uid://dhm4hcktrvogd" path="res://effects/lava_light.tscn" id="5_xdt2b"]
 [ext_resource type="Script" path="res://rooms/Area2D_4.gd" id="6_65ydi"]
 [ext_resource type="PackedScene" uid="uid://denc4kxl7xugw" path="res://entities/interactables/key.tscn" id="7_1vfs6"]
 [ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="10_c7tdr"]
@@ -14,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://f0qpge3rakhk" path="res://entities/interactables/switch.tscn" id="12_7qpry"]
 [ext_resource type="PackedScene" uid="uid://bmmj5j1pa4ksv" path="res://entities/interactables/switch_vines.tscn" id="13_yblp2"]
 [ext_resource type="AudioStream" uid="uid://dxy8gf2wxoxtm" path="res://music/main_ost/Vial Elements - Fire2.mp3" id="14_qfep4"]
+[ext_resource type="PackedScene" uid="uid://onuslx6wppjc" path="res://entities/interactables/candle.tscn" id="17_p25c3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6y20e"]
 texture = ExtResource("2_pptv5")
@@ -133,6 +136,9 @@ size = Vector2(83, 42.5)
 
 [node name="Room4" type="Node2D"]
 
+[node name="DarknessMask" parent="." instance=ExtResource("1_l1fyu")]
+color = Color(0.129412, 0.129412, 0.129412, 1)
+
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_lmbuj")
 centered = false
@@ -148,6 +154,16 @@ scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_eauia")
 format = 2
 layer_0/tile_data = PackedInt32Array(262151, 131072, 0, 327687, 196608, 0, 393223, 262144, 0, 458759, 196608, 0, 524295, 131072, 0, 589831, 131072, 0, 655367, 196608, 0, 196615, 262144, 0, 131079, 196608, 0, 655376, 262144, 0, 589840, 262144, 0, 524304, 131072, 0, 458768, 262144, 0, 393232, 196608, 0, 327696, 131072, 0, 262160, 196608, 0, 196624, 262144, 0, 131088, 131072, 0)
+
+[node name="LavaLight" parent="Lava" instance=ExtResource("5_xdt2b")]
+position = Vector2(119.8, 104.6)
+scale = Vector2(0.271375, 0.998)
+blend_mode = 2
+
+[node name="LavaLight2" parent="Lava" instance=ExtResource("5_xdt2b")]
+position = Vector2(264.4, 106.6)
+scale = Vector2(0.271375, 0.998)
+blend_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1000, 895)
@@ -200,6 +216,15 @@ position = Vector2(285, 439)
 stream = ExtResource("14_qfep4")
 volume_db = 10.0
 autoplay = true
+
+[node name="Candle" parent="." instance=ExtResource("17_p25c3")]
+position = Vector2(902, 265)
+
+[node name="Candle2" parent="." instance=ExtResource("17_p25c3")]
+position = Vector2(459, 617)
+
+[node name="Candle3" parent="." instance=ExtResource("17_p25c3")]
+position = Vector2(1459, 615)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="switch_1" from="Switch" to="Area2D" method="_on_switch_switch_1"]

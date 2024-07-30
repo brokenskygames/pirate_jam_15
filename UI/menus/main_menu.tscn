@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dok8emds0xdxk"]
+[gd_scene load_steps=10 format=3 uid="uid://dok8emds0xdxk"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_jcfpm"]
 [ext_resource type="Script" path="res://UI/menus/main_menu.gd" id="1_sj5tw"]
 [ext_resource type="Texture2D" uid="uid://xmjyfyuvxtbo" path="res://assets/art/player/plague_dr_title.png" id="3_noiff"]
 [ext_resource type="Texture2D" uid="uid://bbmorkf4p4s2h" path="res://assets/art/items/element_icons.png" id="4_e4tgi"]
+[ext_resource type="AudioStream" uid="uid://s0f5k4886jm1" path="res://music/main_ost/Vial Elements - Main menu.mp3" id="5_5fojy"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2plxb"]
 font_size = 120
@@ -269,3 +270,10 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_cxxgp")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5fojy")
+volume_db = -12.0
+autoplay = true
+
+[connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

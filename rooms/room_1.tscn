@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc0j0px15dx2e"]
+[gd_scene load_steps=18 format=3 uid="uid://cc0j0px15dx2e"]
 
+[ext_resource type="PackedScene" uid="uid://cfm2vw1xaaxi3" path="res://effects/darkness_mask.tscn" id="1_b1inp"]
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_muqeh"]
 [ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="2_gd2uo"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="3_dtsvi"]
@@ -12,6 +13,7 @@
 [ext_resource type="Script" path="res://rooms/Area2D_1.gd" id="8_8scdj"]
 [ext_resource type="PackedScene" uid="uid://jo03pmipjjs1" path="res://entities/interactables/door1.tscn" id="8_rmu6q"]
 [ext_resource type="AudioStream" uid="uid://deqk888yfq2b8" path="res://music/main_ost/Vial Elements - Earth.mp3" id="12_wkv68"]
+[ext_resource type="PackedScene" uid="uid://onuslx6wppjc" path="res://entities/interactables/candle.tscn" id="14_b1d4p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6y20e"]
 texture = ExtResource("2_gd2uo")
@@ -99,6 +101,9 @@ size = Vector2(57.25, 102.5)
 
 [node name="Room1" type="Node2D"]
 
+[node name="DarknessMask" parent="." instance=ExtResource("1_b1inp")]
+color = Color(0.129412, 0.129412, 0.129412, 1)
+
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_muqeh")
 centered = false
@@ -150,6 +155,9 @@ visible = false
 stream = ExtResource("12_wkv68")
 volume_db = -12.0
 autoplay = true
+
+[node name="Candle" parent="." instance=ExtResource("14_b1d4p")]
+position = Vector2(1086, 541)
 
 [connection signal="door_opened" from="FloorSwitch" to="Area2D" method="_on_floor_switch_door_opened"]
 [connection signal="door_opened" from="FloorSwitch" to="Door1" method="_on_floor_switch_door_opened"]

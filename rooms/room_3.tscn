@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://b35dxqbqlet7y"]
+[gd_scene load_steps=26 format=3 uid="uid://b35dxqbqlet7y"]
 
+[ext_resource type="PackedScene" uid="uid://cfm2vw1xaaxi3" path="res://effects/darkness_mask.tscn" id="1_yk1bq"]
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="2_vrv1t"]
 [ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="3_cv3l2"]
 [ext_resource type="Texture2D" uid="uid://bd6lngwgo25rm" path="res://assets/art/tilesets/hazard_tiles.png" id="3_npr4o"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://diruej57dnrf0" path="res://entities/interactables/leaf.tscn" id="13_tg2gt"]
 [ext_resource type="PackedScene" uid="uid://d4ed7dsowmtum" path="res://entities/interactables/door2.tscn" id="14_ll6nw"]
 [ext_resource type="AudioStream" uid="uid://c0mvpfflne6fa" path="res://music/main_ost/Vial Elements - Wind.mp3" id="15_ays44"]
+[ext_resource type="PackedScene" uid="uid://onuslx6wppjc" path="res://entities/interactables/candle.tscn" id="17_0s5ee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6y20e"]
 texture = ExtResource("3_cv3l2")
@@ -175,6 +177,9 @@ func _on_life_timeout():
 
 [node name="Room3" type="Node2D"]
 
+[node name="DarknessMask" parent="." instance=ExtResource("1_yk1bq")]
+color = Color(0.129412, 0.129412, 0.129412, 1)
+
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("2_vrv1t")
 centered = false
@@ -272,6 +277,12 @@ polygon = PackedVector2Array(968, 247, 968, 470, 1348, 470, 1346, 248, 1295, 248
 stream = ExtResource("15_ays44")
 volume_db = -12.0
 autoplay = true
+
+[node name="Candle" parent="." instance=ExtResource("17_0s5ee")]
+position = Vector2(738, 546)
+
+[node name="Candle2" parent="." instance=ExtResource("17_0s5ee")]
+position = Vector2(1508, 557)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="dead_shark" from="Path2D" to="Area2D" method="_on_path_2d_dead_shark"]

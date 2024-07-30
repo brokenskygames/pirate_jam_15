@@ -79,7 +79,7 @@ _data = {
 size = Vector2(20, 31)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v1scx"]
-radius = 95.0368
+radius = 66.0076
 
 [node name="Candle" type="StaticBody2D"]
 script = ExtResource("1_10i0u")
@@ -109,8 +109,10 @@ shape = SubResource("CircleShape2D_v1scx")
 
 [node name="DefaultLight" parent="." instance=ExtResource("3_xpobl")]
 scale = Vector2(2.19444, 2.27222)
+enabled = false
 color = Color(1, 1, 1, 0.792157)
 energy = 1.5
+blend_mode = 2
 shadow_enabled = true
 
 [connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]

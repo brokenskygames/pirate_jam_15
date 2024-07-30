@@ -30,10 +30,10 @@ func _on_trigger_area_body_entered(body: Node2D) -> void:
 	if not candle_lit:
 		if body.name.contains("Fire"):
 			light_candle()
-		elif body.is_in_group("lightning"):
+		elif body.name.contains("Lightning"):
 			light_candle()
 	if candle_lit:
-		if body.is_in_group("water"):
+		if body.name.contains("Water"):
 			extinguish_candle()
-		elif body.is_in_group("air"):
+		elif body.name.contains("Wind"):
 			extinguish_candle()

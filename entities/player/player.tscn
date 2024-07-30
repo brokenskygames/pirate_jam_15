@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://qyrp6fb3bmnd"]
+[gd_scene load_steps=28 format=3 uid="uid://qyrp6fb3bmnd"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_mstbg"]
 [ext_resource type="Texture2D" uid="uid://d0ceo5i8na6gm" path="res://assets/art/player/plague_dr_16x16.png" id="2_3r7bj"]
+[ext_resource type="PackedScene" uid="uid://cjg8syjtsk5tt" path="res://effects/player_light.tscn" id="3_b83wd"]
 
 [sub_resource type="Animation" id="Animation_k6kov"]
 resource_name = "player_down_idle"
@@ -328,7 +329,6 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_3r7bj")
 hframes = 4
 vframes = 4
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
@@ -349,3 +349,5 @@ parameters/move/blend_position = Vector2(0, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_h5ayw")
+
+[node name="PlayerLight" parent="." instance=ExtResource("3_b83wd")]

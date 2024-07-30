@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhm4hcktrvogd"]
+
+[ext_resource type="Texture2D" uid="uid://ch6afv8bicldp" path="res://assets/texture/lava_light_mask.tres" id="1_1gnsy"]
+
+[node name="LavaLight" type="PointLight2D"]
+texture = ExtResource("1_1gnsy")
