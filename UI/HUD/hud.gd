@@ -10,6 +10,3 @@ func show_shadow_vial():
 
 func hide_shadow_vial():
 	vial_panel_5.hide()
-
-func _on_open_mix_menu_pressed() -> void:
-	mix_menu.toggle_mix_menu_visibility()
