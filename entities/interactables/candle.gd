@@ -1,8 +1,10 @@
 extends StaticBody2D
 
-@export var darkness_mask : CanvasModulate
+#@onready var darkness_mask : CanvasModulate = %DarknessMask
 var candle_lit := false
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var light = $DefaultLight
+
 
 # For testing
 #func _unhandled_input(event: InputEvent) -> void:
@@ -12,17 +14,21 @@ var candle_lit := false
 func light_candle():
 	animation_player.play("lit")
 	candle_lit = true
-	darkness_mask.visible = false
+	print(light)
+	light.set_enabled(true)
+	#darkness_mask.visible = false
 
 func extinguish_candle():
 	animation_player.play("unlit")
 	candle_lit = false
-	darkness_mask.visible = true
+	light.set_enabled(false)
+	#darkness_mask.visible = true
 
 
 func _on_trigger_area_body_entered(body: Node2D) -> void:
+	print("entro")
 	if not candle_lit:
-		if body.is_in_group("fire"):
+		if body.name.contains("Fire"):
 			light_candle()
 		elif body.is_in_group("lightning"):
 			light_candle()

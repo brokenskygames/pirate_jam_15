@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://y6qlfaumcbvg"]
+[gd_scene load_steps=18 format=3 uid="uid://y6qlfaumcbvg"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_d4qp2"]
 [ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="2_rkvim"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bgd0xr6tcrsp7" path="res://UI/menus/pause_menu.tscn" id="10_qm2nr"]
 [ext_resource type="PackedScene" uid="uid://denc4kxl7xugw" path="res://entities/interactables/key.tscn" id="11_xdbm7"]
 [ext_resource type="Texture2D" uid="uid://crojk811uedq7" path="res://assets/art/interactables/door.png" id="12_8qbv6"]
+[ext_resource type="AudioStream" uid="uid://decwy10r2xugd" path="res://music/main_ost/Vial Elements - Water.mp3" id="13_j40mo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6y20e"]
 texture = ExtResource("2_rkvim")
@@ -192,6 +193,12 @@ layer = 5
 layer = 10
 visible = false
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_j40mo")
+volume_db = -14.0
+autoplay = true
+
 [connection signal="door_opened" from="Pool3" to="Door1" method="_on_pool_3_door_opened"]
 [connection signal="door_opened" from="Pool3" to="Area2D" method="_on_pool_3_door_opened"]
 [connection signal="key_animation" from="Pool3" to="Key" method="_on_pool_3_key_animation"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

@@ -100,11 +100,17 @@ position = Vector2(0, 24.5)
 shape = SubResource("RectangleShape2D_v6a5f")
 
 [node name="TriggerArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 4
 
 [node name="TriggerShape" type="CollisionShape2D" parent="TriggerArea"]
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_v1scx")
 
 [node name="DefaultLight" parent="." instance=ExtResource("3_xpobl")]
+scale = Vector2(2.19444, 2.27222)
+color = Color(1, 1, 1, 0.792157)
+energy = 1.5
+shadow_enabled = true
 
 [connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]

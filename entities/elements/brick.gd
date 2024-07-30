@@ -5,7 +5,8 @@ var SPEED = 800
 
 
 func start(direction,_position):
-	position = _position + _position.normalized()*direction.normalized()*100
+	position.x = _position.x + _position.normalized().x*direction.normalized().x*50
+	position.y = _position.y + _position.normalized().y*direction.normalized().y*100
 	velocity = direction * SPEED
 	get_node("AnimationPlayer").play("brick")	
 

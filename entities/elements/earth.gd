@@ -4,7 +4,8 @@ extends CharacterBody2D
 var SPEED = 350
 
 func start(direction,_position):
-	position = _position
+	position.x = _position.x + _position.normalized().x*direction.normalized().x*50
+	position.y = _position.y + _position.normalized().y*direction.normalized().y*100
 	velocity = direction * SPEED
 	get_node("AnimationPlayer").play("earth")	
 

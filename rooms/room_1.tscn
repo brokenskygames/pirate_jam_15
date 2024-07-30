@@ -148,7 +148,7 @@ visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_wkv68")
-volume_db = -12.18
+volume_db = -12.0
 autoplay = true
 
 [connection signal="door_opened" from="FloorSwitch" to="Area2D" method="_on_floor_switch_door_opened"]

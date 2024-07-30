@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://f0qpge3rakhk"]
+[gd_scene load_steps=4 format=3 uid="uid://f0qpge3rakhk"]
+
+[ext_resource type="Texture2D" uid="uid://coh0ysy1dxxvt" path="res://assets/art/interactables/wall_switch.png" id="1_k664w"]
+[ext_resource type="Script" path="res://entities/interactables/switch.gd" id="1_ot2eo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km4di"]
+size = Vector2(28, 62)
 
 [node name="Switch" type="Area2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_ot2eo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_k664w")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(26, 0)
+shape = SubResource("RectangleShape2D_km4di")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

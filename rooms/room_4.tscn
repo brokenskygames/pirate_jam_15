@@ -1,19 +1,19 @@
-[gd_scene load_steps=23 format=3 uid="uid://iy45otdpkibt"]
+[gd_scene load_steps=20 format=3 uid="uid://iy45otdpkibt"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_lmbuj"]
 [ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="2_pptv5"]
 [ext_resource type="Texture2D" uid="uid://bd6lngwgo25rm" path="res://assets/art/tilesets/hazard_tiles.png" id="3_ukdke"]
 [ext_resource type="Texture2D" uid="uid://crojk811uedq7" path="res://assets/art/interactables/door.png" id="4_876nh"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="5_ih12e"]
-[ext_resource type="Script" path="res://rooms/Area2D_3.gd" id="6_th8hm"]
+[ext_resource type="Script" path="res://rooms/Area2D_4.gd" id="6_65ydi"]
 [ext_resource type="PackedScene" uid="uid://denc4kxl7xugw" path="res://entities/interactables/key.tscn" id="7_1vfs6"]
-[ext_resource type="Script" path="res://rooms/Path2D.gd" id="8_0x1ij"]
-[ext_resource type="PackedScene" uid="uid://h1c8dx2wyxca" path="res://entities/player/shark.tscn" id="9_usob6"]
 [ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="10_c7tdr"]
+[ext_resource type="PackedScene" uid="uid://dtcy0c6qcsbjw" path="res://entities/interactables/door3.tscn" id="11_7vgbp"]
 [ext_resource type="PackedScene" uid="uid://cfb7u18ckq2tm" path="res://UI/menus/mix_menu.tscn" id="11_nufo8"]
 [ext_resource type="PackedScene" uid="uid://bgd0xr6tcrsp7" path="res://UI/menus/pause_menu.tscn" id="12_1m5gp"]
-[ext_resource type="PackedScene" uid="uid://diruej57dnrf0" path="res://entities/interactables/leaf.tscn" id="13_qwkfd"]
-[ext_resource type="PackedScene" uid="uid://d4ed7dsowmtum" path="res://entities/interactables/door2.tscn" id="14_plfgp"]
+[ext_resource type="PackedScene" uid="uid://f0qpge3rakhk" path="res://entities/interactables/switch.tscn" id="12_7qpry"]
+[ext_resource type="PackedScene" uid="uid://bmmj5j1pa4ksv" path="res://entities/interactables/switch_vines.tscn" id="13_yblp2"]
+[ext_resource type="AudioStream" uid="uid://dxy8gf2wxoxtm" path="res://music/main_ost/Vial Elements - Fire2.mp3" id="14_qfep4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6y20e"]
 texture = ExtResource("2_pptv5")
@@ -124,55 +124,14 @@ texture = ExtResource("3_ukdke")
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_eauia"]
-physics_layer_0/collision_layer = 64
+physics_layer_0/collision_layer = 128
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_odmak")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnfa5"]
-size = Vector2(229.25, 42.5)
+size = Vector2(83, 42.5)
 
-[sub_resource type="Curve2D" id="Curve2D_ty5d7"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1000, 280, 0, 0, 0, 0, 1000, 440, 0, 0, 0, 0, 1320, 440, 0, 0, 0, 0, 1320, 280, 0, 0, 0, 0, 1320, 440, 0, 0, 0, 0, 1000, 440, 0, 0, 0, 0, 1000, 280)
-}
-point_count = 7
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfduv"]
-size = Vector2(66, 57)
-
-[sub_resource type="GDScript" id="GDScript_7612c"]
-script/source = "extends Area2D
-
-signal door_opened
-signal key_animation
-
-var floating = false
-var key_found = false
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if floating == true:
-		position.y -= delta*500
-
-
-func _on_body_entered(body):
-	if body.name.contains(\"Wind\"):
-		floating = true
-		$life.start(0.5)
-		if key_found == false:
-				emit_signal(\"key_animation\")
-				emit_signal(\"door_opened\")
-
-
-func _on_life_timeout():
-	queue_free()
-"
-
-[node name="Room3" type="Node2D"]
+[node name="Room4" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_lmbuj")
@@ -182,53 +141,35 @@ centered = false
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_35bbt")
 format = 2
-layer_0/tile_data = PackedInt32Array(720902, 196608, 1, 720903, 196608, 1, 720904, 196608, 1, 720905, 196608, 1, 720906, 196608, 1, 720907, 196608, 1, 720908, 196608, 1, 720909, 196608, 1, 720910, 196608, 1, 720911, 196608, 1, 720912, 196608, 1, 720913, 196608, 1, 720914, 196608, 1, 65554, 131072, 0, 65553, 131072, 0, 65552, 131072, 0, 65551, 131072, 0, 65550, 131072, 0, 65549, 131072, 0, 65548, 131072, 0, 65547, 131072, 0, 65546, 131072, 0, 65545, 131072, 0, 65544, 131072, 0, 65543, 131072, 0, 65542, 131072, 0, 131078, 0, 2, 131079, 0, 2, 131090, 0, 2, 131089, 0, 2, 131088, 0, 2, 131087, 262144, 3, 131086, 0, 3, 131085, 0, 2, 131084, 0, 2, 131083, 0, 2, 131082, 0, 2, 131081, 262144, 3, 131080, 0, 2, 196614, 196608, 2, 262150, 196608, 2, 327686, 196608, 2, 393222, 196608, 2, 458758, 196608, 2, 524294, 196608, 2, 589830, 196608, 2, 655366, 196608, 2, 196615, 196608, 2, 262151, 196608, 2, 327687, 196608, 2, 393223, 196608, 2, 458759, 196608, 2, 524295, 196608, 2, 589831, 196608, 2, 655367, 196608, 2, 196616, 196608, 2, 262152, 196608, 2, 327688, 196608, 2, 393224, 196608, 2, 458760, 196608, 2, 524296, 196608, 2, 589832, 196608, 2, 655368, 196608, 2, 196617, 196608, 2, 262153, 196608, 2, 327689, 196608, 2, 393225, 196608, 2, 458761, 196608, 2, 524297, 196608, 2, 589833, 196608, 2, 655369, 196608, 2, 196618, 196608, 2, 262154, 196608, 2, 327690, 196608, 2, 393226, 196608, 2, 458762, 196608, 2, 524298, 196608, 2, 589834, 196608, 2, 655370, 196608, 2, 196619, 196608, 2, 262155, 196608, 2, 327691, 196608, 2, 393227, 196608, 2, 458763, 196608, 2, 524299, 196608, 2, 589835, 196608, 2, 655371, 196608, 2, 196620, 196608, 2, 262156, 196608, 2, 327692, 196608, 2, 393228, 196608, 2, 458764, 196608, 2, 524300, 196608, 2, 589836, 196608, 2, 655372, 196608, 2, 196621, 196608, 2, 262157, 196608, 2, 327693, 196608, 2, 393229, 196608, 2, 458765, 196608, 2, 524301, 196608, 2, 589837, 196608, 2, 655373, 196608, 2, 196622, 196608, 2, 262158, 196608, 2, 327694, 196608, 2, 393230, 196608, 2, 458766, 196608, 2, 524302, 196608, 2, 589838, 196608, 2, 655374, 196608, 2, 196623, 196608, 2, 262159, 196608, 2, 327695, 196608, 2, 393231, 196608, 2, 458767, 196608, 2, 524303, 196608, 2, 589839, 196608, 2, 655375, 196608, 2, 196624, 196608, 2, 262160, 196608, 2, 327696, 196608, 2, 393232, 196608, 2, 458768, 196608, 2, 524304, 196608, 2, 589840, 196608, 2, 655376, 196608, 2, 196625, 196608, 2, 262161, 196608, 2, 327697, 196608, 2, 393233, 196608, 2, 458769, 196608, 2, 524305, 196608, 2, 589841, 196608, 2, 655377, 196608, 2, 196626, 196608, 2, 262162, 196608, 2, 327698, 196608, 2, 393234, 196608, 2, 458770, 196608, 2, 524306, 196608, 2, 589842, 196608, 2, 655378, 196608, 2, 655362, 65536, 1, 589826, 65536, 1, 524290, 65536, 1, 458754, 65536, 1, 393218, 65536, 1, 327682, 65536, 1, 262146, 65536, 1, 196610, 65536, 1, 131074, 65536, 1, 65538, 196608, 0, 65539, 131072, 0, 65540, 131072, 0, 65541, 131072, 0, 65555, 131072, 0, 131092, 262144, 2, 196628, 196608, 2, 262164, 196608, 2, 327700, 196608, 2, 393236, 196608, 2, 458772, 196608, 2, 524308, 196608, 2, 589844, 196608, 2, 655380, 196608, 2, 720916, 196608, 1, 720899, 196608, 1, 720900, 196608, 1, 720901, 196608, 1, 720915, 196608, 1, 196613, 196608, 2, 196612, 196608, 2, 196611, 196608, 2, 262147, 196608, 2, 262148, 196608, 2, 262149, 196608, 2, 327685, 196608, 2, 327684, 196608, 2, 327683, 196608, 2, 393219, 196608, 2, 393220, 196608, 2, 393221, 196608, 2, 458757, 196608, 2, 458756, 196608, 2, 458755, 196608, 2, 524292, 196608, 2, 524293, 196608, 2, 524291, 196608, 2, 589827, 196608, 2, 589828, 196608, 2, 589829, 196608, 2, 655365, 196608, 2, 655364, 196608, 2, 655363, 196608, 2, 196627, 196608, 2, 262163, 196608, 2, 327699, 196608, 2, 393235, 196608, 2, 458771, 196608, 2, 524307, 196608, 2, 589843, 196608, 2, 655379, 196608, 2, 131077, 0, 2, 131076, 262144, 2, 131075, 0, 2, 131091, 0, 2, 65556, 131072, 0, 131093, 0, 1, 196629, 0, 1, 262165, 0, 1, 327701, 0, 1, 393237, 0, 1, 458773, 0, 1, 524309, 0, 1, 589845, 0, 1, 655381, 0, 1, 720898, 131072, 1, 720917, 262144, 1, 65557, 262144, 0)
+layer_0/tile_data = PackedInt32Array(720902, 196608, 1, 720903, 196608, 1, 720904, 196608, 1, 720905, 196608, 1, 720906, 196608, 1, 720907, 196608, 1, 720908, 196608, 3, 720909, 196608, 1, 720910, 196608, 1, 720911, 196608, 1, 720912, 196608, 1, 720913, 196608, 1, 720914, 196608, 1, 65554, 0, 2, 65553, 0, 2, 65552, 0, 2, 65551, 0, 2, 65550, 262144, 3, 65549, 262144, 3, 65548, 0, 4, 65547, 262144, 3, 65545, 0, 2, 65544, 0, 2, 65543, 0, 2, 65542, 262144, 2, 131078, 196608, 2, 131079, 196608, 2, 131090, 196608, 2, 131089, 196608, 2, 131088, 196608, 2, 131087, 196608, 2, 131086, 196608, 2, 131085, 196608, 2, 131084, 196608, 2, 131083, 196608, 2, 131082, 196608, 2, 131081, 196608, 2, 131080, 196608, 2, 196614, 196608, 2, 262150, 196608, 2, 327686, 196608, 2, 393222, 196608, 2, 458758, 196608, 2, 524294, 196608, 2, 589830, 196608, 2, 655366, 196608, 2, 196615, 196608, 2, 262151, 196608, 2, 327687, 196608, 2, 393223, 196608, 2, 458759, 196608, 2, 524295, 196608, 2, 589831, 196608, 2, 655367, 196608, 2, 196616, 196608, 2, 262152, 196608, 2, 327688, 196608, 2, 393224, 196608, 2, 458760, 196608, 2, 524296, 196608, 2, 589832, 196608, 2, 655368, 196608, 2, 196617, 196608, 2, 262153, 196608, 2, 327689, 196608, 2, 393225, 196608, 2, 458761, 196608, 2, 524297, 196608, 2, 589833, 196608, 2, 655369, 196608, 2, 196618, 196608, 2, 262154, 196608, 2, 327690, 196608, 2, 393226, 196608, 2, 458762, 196608, 2, 524298, 196608, 2, 589834, 196608, 2, 655370, 196608, 2, 196619, 196608, 2, 262155, 196608, 2, 327691, 196608, 2, 393227, 196608, 2, 458763, 196608, 2, 524299, 196608, 2, 589835, 196608, 2, 655371, 196608, 2, 196620, 196608, 2, 262156, 196608, 2, 327692, 196608, 2, 393228, 196608, 2, 458764, 196608, 2, 524300, 196608, 2, 589836, 196608, 2, 655372, 196608, 2, 196621, 196608, 2, 262157, 196608, 2, 327693, 196608, 2, 393229, 196608, 2, 458765, 196608, 2, 524301, 196608, 2, 589837, 196608, 2, 655373, 196608, 2, 196622, 196608, 2, 262158, 196608, 2, 327694, 196608, 2, 393230, 196608, 2, 458766, 196608, 2, 524302, 196608, 2, 589838, 196608, 2, 655374, 196608, 2, 196623, 196608, 2, 262159, 196608, 2, 327695, 196608, 2, 393231, 196608, 2, 458767, 196608, 2, 524303, 196608, 2, 589839, 196608, 2, 655375, 196608, 2, 196624, 196608, 2, 262160, 196608, 2, 327696, 196608, 2, 393232, 196608, 2, 458768, 196608, 2, 524304, 196608, 2, 589840, 196608, 2, 655376, 196608, 2, 196625, 196608, 2, 262161, 196608, 2, 327697, 196608, 2, 393233, 196608, 2, 458769, 196608, 2, 524305, 196608, 2, 589841, 196608, 2, 655377, 196608, 2, 196626, 196608, 2, 262162, 196608, 2, 327698, 196608, 2, 393234, 196608, 2, 458770, 196608, 2, 524306, 196608, 2, 589842, 196608, 2, 655378, 196608, 2, 655362, 65536, 1, 589826, 65536, 1, 524290, 65536, 1, 458754, 65536, 1, 393218, 65536, 1, 327682, 65536, 1, 262146, 65536, 1, 196610, 65536, 1, 131074, 65536, 1, 65538, 65536, 1, 65539, 0, 2, 65540, 0, 2, 65541, 262144, 3, 65555, 0, 2, 131092, 196608, 2, 196628, 196608, 2, 262164, 196608, 2, 327700, 196608, 2, 393236, 196608, 2, 458772, 196608, 2, 524308, 196608, 2, 589844, 196608, 2, 655380, 196608, 2, 720916, 196608, 1, 720899, 196608, 1, 720900, 196608, 1, 720901, 196608, 1, 720915, 196608, 1, 196613, 196608, 2, 196612, 196608, 2, 196611, 196608, 2, 262147, 196608, 2, 262148, 196608, 2, 262149, 196608, 2, 327685, 196608, 2, 327684, 196608, 2, 327683, 196608, 2, 393219, 196608, 2, 393220, 196608, 2, 393221, 196608, 2, 458757, 196608, 2, 458756, 196608, 2, 458755, 196608, 2, 524292, 196608, 2, 524293, 196608, 2, 524291, 196608, 2, 589827, 196608, 2, 589828, 196608, 2, 589829, 196608, 2, 655365, 196608, 2, 655364, 196608, 2, 655363, 196608, 2, 196627, 196608, 2, 262163, 196608, 2, 327699, 196608, 2, 393235, 196608, 2, 458771, 196608, 2, 524307, 196608, 2, 589843, 196608, 2, 655379, 196608, 2, 131077, 196608, 2, 131076, 196608, 2, 131075, 196608, 2, 131091, 196608, 2, 65556, 262144, 2, 131093, 0, 1, 196629, 0, 1, 262165, 0, 1, 327701, 0, 1, 393237, 0, 1, 458773, 0, 1, 524309, 0, 1, 589845, 0, 1, 655381, 0, 1, 720898, 131072, 1, 720917, 262144, 1, 65557, 0, 1, 2, 196608, 0, 21, 262144, 0, 3, 131072, 0, 4, 131072, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 131072, 0, 9, 131072, 0, 10, 131072, 0, 11, 131072, 0, 12, 131072, 0, 13, 131072, 0, 14, 131072, 0, 15, 131072, 0, 16, 131072, 0, 17, 131072, 0, 18, 131072, 0, 19, 131072, 0, 20, 131072, 0, 65546, 262144, 3)
 
-[node name="Water" type="TileMap" parent="."]
+[node name="Lava" type="TileMap" parent="."]
 scale = Vector2(5, 5)
 tile_set = SubResource("TileSet_eauia")
 format = 2
-layer_0/tile_data = PackedInt32Array(196620, 65536, 0, 262156, 327680, 0, 327692, 393216, 0, 327693, 65536, 0, 327694, 327680, 0, 327695, 393216, 0, 327696, 327680, 0, 262160, 65536, 0, 196624, 393216, 0)
+layer_0/tile_data = PackedInt32Array(262151, 131072, 0, 327687, 196608, 0, 393223, 262144, 0, 458759, 196608, 0, 524295, 131072, 0, 589831, 131072, 0, 655367, 196608, 0, 196615, 262144, 0, 131079, 196608, 0, 655376, 262144, 0, 589840, 262144, 0, 524304, 131072, 0, 458768, 262144, 0, 393232, 196608, 0, 327696, 131072, 0, 262160, 196608, 0, 196624, 262144, 0, 131088, 131072, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(150, 520)
+position = Vector2(1000, 895)
 scale = Vector2(5, 5)
 texture = ExtResource("4_876nh")
 hframes = 9
-frame = 4
+frame = 2
 
 [node name="Player" parent="." instance=ExtResource("5_ih12e")]
-position = Vector2(302, 517)
+position = Vector2(1000, 827)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
-script = ExtResource("6_th8hm")
+script = ExtResource("6_65ydi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1160.38, 247.75)
+position = Vector2(1002, 162)
 shape = SubResource("RectangleShape2D_bnfa5")
 debug_color = Color(0.976471, 0, 0.419608, 0.419608)
 
 [node name="Key" parent="." instance=ExtResource("7_1vfs6")]
 position = Vector2(1505, 388)
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_ty5d7")
-script = ExtResource("8_0x1ij")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(1000, 280)
-rotation = 1.5708
-
-[node name="Shark" parent="Path2D/PathFollow2D" instance=ExtResource("9_usob6")]
-
-[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
-collision_layer = 16
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
-position = Vector2(-2, 1.5)
-shape = SubResource("RectangleShape2D_tfduv")
 
 [node name="UI" type="Node" parent="."]
 
@@ -245,31 +186,23 @@ layer = 5
 layer = 10
 visible = false
 
-[node name="Leaf" parent="." instance=ExtResource("13_qwkfd")]
-position = Vector2(747, 791)
-
-[node name="Leaf2" parent="." instance=ExtResource("13_qwkfd")]
-position = Vector2(631, 342)
-
-[node name="Leaf3" parent="." instance=ExtResource("13_qwkfd")]
-position = Vector2(1532, 800)
-
-[node name="Leaf4" parent="." instance=ExtResource("13_qwkfd")]
-position = Vector2(1506, 392)
-script = SubResource("GDScript_7612c")
-
-[node name="Door1" parent="." instance=ExtResource("14_plfgp")]
-position = Vector2(1160, 205)
-
-[node name="shark_area" type="Area2D" parent="."]
+[node name="Door3" parent="." instance=ExtResource("11_7vgbp")]
+position = Vector2(1000, 140)
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="shark_area"]
-polygon = PackedVector2Array(968, 247, 968, 470, 1348, 470, 1346, 248, 1295, 248, 1294, 410, 1029, 410, 1031, 244)
+[node name="Switch" parent="." instance=ExtResource("12_7qpry")]
+position = Vector2(1640, 437)
+
+[node name="Switch2" parent="." instance=ExtResource("13_yblp2")]
+position = Vector2(285, 439)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_qfep4")
+volume_db = 10.0
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="dead_shark" from="Path2D" to="Area2D" method="_on_path_2d_dead_shark"]
-[connection signal="body_entered" from="Path2D/PathFollow2D/Area2D" to="Path2D" method="_on_area_2d_body_entered"]
-[connection signal="door_opened" from="Leaf4" to="Door1" method="_on_leaf_4_door_opened"]
-[connection signal="key_animation" from="Leaf4" to="Key" method="_on_leaf_4_key_animation"]
-[connection signal="body_entered" from="shark_area" to="Area2D" method="_on_shark_area_body_entered"]
+[connection signal="switch_1" from="Switch" to="Area2D" method="_on_switch_switch_1"]
+[connection signal="switch_1" from="Switch" to="Door3" method="_on_switch_switch_1"]
+[connection signal="switch_2" from="Switch2" to="Area2D" method="_on_switch_2_switch_2"]
+[connection signal="switch_2" from="Switch2" to="Door3" method="_on_switch_2_switch_2"]

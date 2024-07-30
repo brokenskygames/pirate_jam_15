@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmmj5j1pa4ksv"]
+
+[ext_resource type="Script" path="res://entities/interactables/switch_vines.gd" id="1_c2xne"]
+[ext_resource type="Texture2D" uid="uid://coh0ysy1dxxvt" path="res://assets/art/interactables/wall_switch.png" id="2_ephau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_km4di"]
+size = Vector2(28, 62)
+
+[node name="Switch_vine" type="Area2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_c2xne")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_ephau")
+flip_h = true
+hframes = 3
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-26, 0)
+shape = SubResource("RectangleShape2D_km4di")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
