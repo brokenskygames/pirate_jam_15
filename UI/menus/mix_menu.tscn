@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfb7u18ckq2tm"]
+[gd_scene load_steps=5 format=3 uid="uid://cfb7u18ckq2tm"]
 
 [ext_resource type="Script" path="res://UI/menus/mix_menu.gd" id="1_hff7h"]
+[ext_resource type="Texture2D" uid="uid://dus5aya120jhq" path="res://assets/art/items/vial.png" id="2_x57td"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_18quo"]
 font_size = 30
@@ -12,7 +13,7 @@ font_size = 60
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="MixMenu" type="CanvasLayer"]
+[node name="MixMenu" type="CanvasLayer" groups=["mix_menu"]]
 process_mode = 1
 visible = false
 script = ExtResource("1_hff7h")
@@ -69,11 +70,23 @@ layout_mode = 2
 alignment = 1
 
 [node name="Mix1" type="Panel" parent="CenterContainer/Panel/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="VialDisplay1" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/HBoxContainer/Mix1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../../Mix2/VialDisplay2")
+focus_neighbor_right = NodePath("../../Mix2/VialDisplay2")
+texture = ExtResource("2_x57td")
+stretch_mode = 5
 
 [node name="PlusMark" type="Panel" parent="CenterContainer/Panel/VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -95,8 +108,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Mix2" type="Panel" parent="CenterContainer/Panel/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="VialDisplay2" type="TextureRect" parent="CenterContainer/Panel/VBoxContainer/HBoxContainer/Mix2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("../../Mix1/VialDisplay1")
+focus_neighbor_right = NodePath("../../Mix1/VialDisplay1")
+texture = ExtResource("2_x57td")
+stretch_mode = 5
