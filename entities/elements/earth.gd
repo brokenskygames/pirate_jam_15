@@ -14,6 +14,8 @@ func _physics_process(delta):
 	if collision:
 		if collision.get_collider().has_method("hit"):
 			collision.get_collider().hit(velocity)
+		get_node("AnimationPlayer").play("earth_impact")
+		await get_node("AnimationPlayer").animation_finished
 		queue_free()
 	await get_node("AnimationPlayer").animation_finished
 	queue_free()

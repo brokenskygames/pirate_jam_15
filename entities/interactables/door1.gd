@@ -16,3 +16,8 @@ func _physics_process(delta):
 			position.y = position.y + delta * 100
 			
 			
+
+
+func _on_pool_3_door_opened():
+	opening = true
+	position_old = position.y

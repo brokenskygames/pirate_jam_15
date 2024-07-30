@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0umjcsvbx6gr"
+path="res://.godot/imported/Throw Mudball SFX.mp3-0320fbc5df7d764e89fbaf1cebbd0846.mp3str"
+
+[deps]
+
+source_file="res://music/SFX/Throw Mudball SFX.mp3"
+dest_files=["res://.godot/imported/Throw Mudball SFX.mp3-0320fbc5df7d764e89fbaf1cebbd0846.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

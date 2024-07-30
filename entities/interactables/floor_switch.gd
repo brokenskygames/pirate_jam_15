@@ -15,9 +15,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("toy aqui")
 	if switch == false:
 		switch = true
 		$Sprite2D.frame = 1
-		print("senal")
 		emit_signal("door_opened")

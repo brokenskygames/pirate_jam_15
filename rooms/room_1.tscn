@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cc0j0px15dx2e"]
+[gd_scene load_steps=16 format=3 uid="uid://cc0j0px15dx2e"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_muqeh"]
 [ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="2_gd2uo"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://entities/interactables/door1.gd" id="7_vve0i"]
 [ext_resource type="Script" path="res://rooms/Area2D_1.gd" id="8_8scdj"]
 [ext_resource type="PackedScene" uid="uid://jo03pmipjjs1" path="res://entities/interactables/door1.tscn" id="8_rmu6q"]
+[ext_resource type="AudioStream" uid="uid://decwy10r2xugd" path="res://music/main_ost/Vial Elements - Water.mp3" id="12_lmb0r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6y20e"]
 texture = ExtResource("2_gd2uo")
@@ -144,6 +145,10 @@ layer = 5
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_cb0y8")]
 layer = 10
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_lmb0r")
+autoplay = true
 
 [connection signal="door_opened" from="FloorSwitch" to="Area2D" method="_on_floor_switch_door_opened"]
 [connection signal="door_opened" from="FloorSwitch" to="Door1" method="_on_floor_switch_door_opened"]

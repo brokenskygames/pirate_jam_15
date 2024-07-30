@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cscw3rtw84prm"
+path="res://.godot/imported/Lava sizzle SFX.mp3-6f74c7ec3d78748f586b099e3db0ba6a.mp3str"
+
+[deps]
+
+source_file="res://music/SFX/Lava sizzle SFX.mp3"
+dest_files=["res://.godot/imported/Lava sizzle SFX.mp3-6f74c7ec3d78748f586b099e3db0ba6a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

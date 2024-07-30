@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctyj00un0vm42"
+path="res://.godot/imported/Vial Elements - End.mp3-31e44aa13e9aeb9bdfebd12454800515.mp3str"
+
+[deps]
+
+source_file="res://music/main_ost/Vial Elements - End.mp3"
+dest_files=["res://.godot/imported/Vial Elements - End.mp3-31e44aa13e9aeb9bdfebd12454800515.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

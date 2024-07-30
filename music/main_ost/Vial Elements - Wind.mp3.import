@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0mvpfflne6fa"
+path="res://.godot/imported/Vial Elements - Wind.mp3-a62a7b77d940a679c9c271321c907e35.mp3str"
+
+[deps]
+
+source_file="res://music/main_ost/Vial Elements - Wind.mp3"
+dest_files=["res://.godot/imported/Vial Elements - Wind.mp3-a62a7b77d940a679c9c271321c907e35.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

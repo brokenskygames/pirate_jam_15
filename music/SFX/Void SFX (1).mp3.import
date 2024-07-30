@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bs4yph3xm70cx"
+path="res://.godot/imported/Void SFX (1).mp3-0f285e41b28aeb94030aaba5a1e6b3ec.mp3str"
+
+[deps]
+
+source_file="res://music/SFX/Void SFX (1).mp3"
+dest_files=["res://.godot/imported/Void SFX (1).mp3-0f285e41b28aeb94030aaba5a1e6b3ec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

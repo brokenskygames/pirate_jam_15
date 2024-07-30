@@ -46,7 +46,7 @@ _data = {
 
 [node name="Fireball" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 13
+collision_mask = 29
 script = ExtResource("1_pw2ne")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

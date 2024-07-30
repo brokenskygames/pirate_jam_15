@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxs3o406g1mms"]
+[gd_scene load_steps=7 format=3 uid="uid://cxs3o406g1mms"]
 
 [ext_resource type="Script" path="res://entities/elements/earth.gd" id="1_jtib4"]
 [ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="2_baj8x"]
@@ -15,20 +15,49 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [27, 28, 29, 30, 31]
 }
 
+[sub_resource type="Animation" id="Animation_kebmj"]
+resource_name = "earth_impact"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [29, 30, 31]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ea0lw"]
 _data = {
-"earth": SubResource("Animation_7ibk7")
+"earth": SubResource("Animation_7ibk7"),
+"earth_impact": SubResource("Animation_kebmj")
 }
 
 [node name="Earth" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 13
+collision_mask = 29
 script = ExtResource("1_jtib4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -36,7 +65,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("2_baj8x")
 hframes = 6
 vframes = 6
-frame = 27
+frame = 29
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xjxs2")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mov3h4y38ot2"
+path="res://.godot/imported/Fill Water SFX.mp3-e94d4f3e337df809a59dd36d717167b1.mp3str"
+
+[deps]
+
+source_file="res://music/SFX/Fill Water SFX.mp3"
+dest_files=["res://.godot/imported/Fill Water SFX.mp3-e94d4f3e337df809a59dd36d717167b1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
