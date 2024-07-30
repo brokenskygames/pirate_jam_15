@@ -1,22 +1,22 @@
-[gd_scene load_steps=23 format=3 uid="uid://b35dxqbqlet7y"]
+[gd_scene load_steps=23 format=3 uid="uid://iy45otdpkibt"]
 
-[ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="2_vrv1t"]
-[ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="3_cv3l2"]
-[ext_resource type="Texture2D" uid="uid://bd6lngwgo25rm" path="res://assets/art/tilesets/hazard_tiles.png" id="3_npr4o"]
-[ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="5_jowbm"]
-[ext_resource type="Script" path="res://rooms/Area2D_3.gd" id="6_ljofk"]
-[ext_resource type="Script" path="res://rooms/Path2D.gd" id="8_1kh0e"]
-[ext_resource type="PackedScene" uid="uid://denc4kxl7xugw" path="res://entities/interactables/key.tscn" id="9_4ggkc"]
-[ext_resource type="PackedScene" uid="uid://h1c8dx2wyxca" path="res://entities/player/shark.tscn" id="9_alrau"]
-[ext_resource type="Texture2D" uid="uid://crojk811uedq7" path="res://assets/art/interactables/door.png" id="10_w7jql"]
-[ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="11_qgbga"]
-[ext_resource type="PackedScene" uid="uid://cfb7u18ckq2tm" path="res://UI/menus/mix_menu.tscn" id="12_qg3us"]
-[ext_resource type="PackedScene" uid="uid://bgd0xr6tcrsp7" path="res://UI/menus/pause_menu.tscn" id="13_ncoqm"]
-[ext_resource type="PackedScene" uid="uid://diruej57dnrf0" path="res://entities/interactables/leaf.tscn" id="13_tg2gt"]
-[ext_resource type="PackedScene" uid="uid://d4ed7dsowmtum" path="res://entities/interactables/door2.tscn" id="14_ll6nw"]
+[ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_lmbuj"]
+[ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="2_pptv5"]
+[ext_resource type="Texture2D" uid="uid://bd6lngwgo25rm" path="res://assets/art/tilesets/hazard_tiles.png" id="3_ukdke"]
+[ext_resource type="Texture2D" uid="uid://crojk811uedq7" path="res://assets/art/interactables/door.png" id="4_876nh"]
+[ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="5_ih12e"]
+[ext_resource type="Script" path="res://rooms/Area2D_3.gd" id="6_th8hm"]
+[ext_resource type="PackedScene" uid="uid://denc4kxl7xugw" path="res://entities/interactables/key.tscn" id="7_1vfs6"]
+[ext_resource type="Script" path="res://rooms/Path2D.gd" id="8_0x1ij"]
+[ext_resource type="PackedScene" uid="uid://h1c8dx2wyxca" path="res://entities/player/shark.tscn" id="9_usob6"]
+[ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="10_c7tdr"]
+[ext_resource type="PackedScene" uid="uid://cfb7u18ckq2tm" path="res://UI/menus/mix_menu.tscn" id="11_nufo8"]
+[ext_resource type="PackedScene" uid="uid://bgd0xr6tcrsp7" path="res://UI/menus/pause_menu.tscn" id="12_1m5gp"]
+[ext_resource type="PackedScene" uid="uid://diruej57dnrf0" path="res://entities/interactables/leaf.tscn" id="13_qwkfd"]
+[ext_resource type="PackedScene" uid="uid://d4ed7dsowmtum" path="res://entities/interactables/door2.tscn" id="14_plfgp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6y20e"]
-texture = ExtResource("3_cv3l2")
+texture = ExtResource("2_pptv5")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -97,7 +97,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6y20e")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odmak"]
-texture = ExtResource("3_npr4o")
+texture = ExtResource("3_ukdke")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -175,7 +175,7 @@ func _on_life_timeout():
 [node name="Room3" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2_vrv1t")
+texture = ExtResource("1_lmbuj")
 centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -193,34 +193,34 @@ layer_0/tile_data = PackedInt32Array(196620, 65536, 0, 262156, 327680, 0, 327692
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(150, 520)
 scale = Vector2(5, 5)
-texture = ExtResource("10_w7jql")
+texture = ExtResource("4_876nh")
 hframes = 9
 frame = 4
 
-[node name="Player" parent="." instance=ExtResource("5_jowbm")]
+[node name="Player" parent="." instance=ExtResource("5_ih12e")]
 position = Vector2(302, 517)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
-script = ExtResource("6_ljofk")
+script = ExtResource("6_th8hm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1160.38, 247.75)
 shape = SubResource("RectangleShape2D_bnfa5")
 debug_color = Color(0.976471, 0, 0.419608, 0.419608)
 
-[node name="Key" parent="." instance=ExtResource("9_4ggkc")]
+[node name="Key" parent="." instance=ExtResource("7_1vfs6")]
 position = Vector2(1505, 388)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ty5d7")
-script = ExtResource("8_1kh0e")
+script = ExtResource("8_0x1ij")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(1000, 280)
 rotation = 1.5708
 
-[node name="Shark" parent="Path2D/PathFollow2D" instance=ExtResource("9_alrau")]
+[node name="Shark" parent="Path2D/PathFollow2D" instance=ExtResource("9_usob6")]
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
 collision_layer = 16
@@ -232,33 +232,33 @@ shape = SubResource("RectangleShape2D_tfduv")
 
 [node name="UI" type="Node" parent="."]
 
-[node name="HUD" parent="UI" node_paths=PackedStringArray("mix_menu") instance=ExtResource("11_qgbga")]
+[node name="HUD" parent="UI" node_paths=PackedStringArray("mix_menu") instance=ExtResource("10_c7tdr")]
 process_mode = 1
 layer = 8
 mix_menu = NodePath("../MixMenu")
 
-[node name="MixMenu" parent="UI" instance=ExtResource("12_qg3us")]
+[node name="MixMenu" parent="UI" instance=ExtResource("11_nufo8")]
 process_mode = 3
 layer = 5
 
-[node name="PauseMenu" parent="UI" instance=ExtResource("13_ncoqm")]
+[node name="PauseMenu" parent="UI" instance=ExtResource("12_1m5gp")]
 layer = 10
 visible = false
 
-[node name="Leaf" parent="." instance=ExtResource("13_tg2gt")]
+[node name="Leaf" parent="." instance=ExtResource("13_qwkfd")]
 position = Vector2(747, 791)
 
-[node name="Leaf2" parent="." instance=ExtResource("13_tg2gt")]
+[node name="Leaf2" parent="." instance=ExtResource("13_qwkfd")]
 position = Vector2(631, 342)
 
-[node name="Leaf3" parent="." instance=ExtResource("13_tg2gt")]
+[node name="Leaf3" parent="." instance=ExtResource("13_qwkfd")]
 position = Vector2(1532, 800)
 
-[node name="Leaf4" parent="." instance=ExtResource("13_tg2gt")]
+[node name="Leaf4" parent="." instance=ExtResource("13_qwkfd")]
 position = Vector2(1506, 392)
 script = SubResource("GDScript_7612c")
 
-[node name="Door1" parent="." instance=ExtResource("14_ll6nw")]
+[node name="Door1" parent="." instance=ExtResource("14_plfgp")]
 position = Vector2(1160, 205)
 
 [node name="shark_area" type="Area2D" parent="."]

@@ -62,7 +62,7 @@ func get_input():
 		use_vial()
 
 func use_vial():
-	equip_item = 8
+	#equip_item = 8
 	if equip_item == 1:
 		var fire_vial = fire.instantiate()
 		fire_vial.start(dir_facing,global_position)
