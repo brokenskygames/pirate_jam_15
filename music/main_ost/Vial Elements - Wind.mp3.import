@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Vial Elements - Wind.mp3-a62a7b77d940a679c9c2
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

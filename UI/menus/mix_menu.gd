@@ -46,12 +46,15 @@ func shift_vial_display():
 
 func new_element_select(value: int) -> void:
 	match value:
-		4: #Fireball 3Wind + 1Fire
+		7: #Fireball 6Wind + 1Fire
 			player.equip_item = 5
-		5: #Lightining 3wind + 2Water
+		9: #Lightining 8Earth + 1Fire
+			player.equip_item = 8
+		10: #Lightining 6wind + 4Water
 			player.equip_item = 6
-		6: #Mudball 2Water + 4Earth
+		12: #Mudball 4Water + 8Earth
 			player.equip_item = 7
+		
 		_:#default
 			print("invalid combination")
 		
@@ -79,11 +82,11 @@ func update_vial_display(value: int, display: TextureRect):
 	match value:
 		1:
 			display.texture = RED_VIAL
-		2: 
-			display.texture = BLUE_VIAL
-		3: 
-			display.texture = GREEN_VIAL
 		4: 
+			display.texture = BLUE_VIAL
+		6: 
+			display.texture = GREEN_VIAL
+		8: 
 			display.texture = BROWN_VIAL
 
 func _on_changed_vial(value: int) -> void:

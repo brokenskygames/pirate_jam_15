@@ -11,7 +11,8 @@ func _on_pool_3_door_opened():
 
 func _on_body_entered(body):
 	if opening == true:
-		get_tree().change_scene_to_file("res://rooms/room_3.tscn")
+		if body.name.contains("Player"):
+			get_tree().change_scene_to_file("res://rooms/room_3.tscn")
 
 
 

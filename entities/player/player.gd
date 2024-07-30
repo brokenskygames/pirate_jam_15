@@ -15,6 +15,7 @@ var wind = preload("res://entities/elements/wind.tscn")
 var fireball = preload("res://entities/elements/fireball.tscn")
 var lightning = preload("res://entities/elements/lightning.tscn")
 var mudball = preload("res://entities/elements/mudball.tscn")
+var brick = preload("res://entities/elements/brick.tscn")
 
 const SPEED = 400.0
 var direction : Vector2 = Vector2.ZERO
@@ -49,18 +50,19 @@ func get_input():
 		changed_vial.emit(1)
 	if Input.is_action_just_pressed("vial_2"):
 		equip_item = 2
-		changed_vial.emit(2)
+		changed_vial.emit(4)
 	if Input.is_action_just_pressed("vial_3"):
 		equip_item = 3
-		changed_vial.emit(3)
+		changed_vial.emit(6)
 	if Input.is_action_just_pressed("vial_4"):
 		equip_item = 4
-		changed_vial.emit(4)
+		changed_vial.emit(8)
 	if Input.is_action_just_pressed("use_vial") and can_act:
 		print("shoot")
 		use_vial()
 
 func use_vial():
+	equip_item = 8
 	if equip_item == 1:
 		var fire_vial = fire.instantiate()
 		fire_vial.start(dir_facing,global_position)
@@ -91,6 +93,10 @@ func use_vial():
 		var mudball_vial = mudball.instantiate()
 		mudball_vial.start(dir_facing,global_position)
 		get_tree().root.add_child(mudball_vial)
+	if equip_item == 8:
+		var brick_vial = brick.instantiate()
+		brick_vial.start(dir_facing,global_position)
+		get_tree().root.add_child(brick_vial)
 
 
 

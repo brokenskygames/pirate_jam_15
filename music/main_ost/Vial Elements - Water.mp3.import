@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Vial Elements - Water.mp3-ad6a3808d278fa4f167
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

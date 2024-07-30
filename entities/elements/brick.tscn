@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3u3tln21tw1k"]
+
+[ext_resource type="Script" path="res://entities/elements/brick.gd" id="1_g27iy"]
+[ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="2_t517c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_von71"]
+size = Vector2(45, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ojgk"]
+size = Vector2(50, 41)
+
+[sub_resource type="Animation" id="Animation_rvwny"]
+resource_name = "brick"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [26, 23, 32]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4wrl"]
+_data = {
+"brick": SubResource("Animation_rvwny")
+}
+
+[node name="Brick" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_g27iy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_t517c")
+hframes = 6
+vframes = 6
+frame = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 2)
+shape = SubResource("RectangleShape2D_von71")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 66
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 2.5)
+shape = SubResource("RectangleShape2D_2ojgk")
+debug_color = Color(0.160784, 0.643137, 0, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b4wrl")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

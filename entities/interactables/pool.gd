@@ -16,7 +16,6 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("hola")
 	if body.name.contains("Water"):
 		if fill_status < 2:
 			fill_status += 1

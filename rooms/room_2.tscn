@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://y6qlfaumcbvg"]
+[gd_scene load_steps=17 format=3 uid="uid://y6qlfaumcbvg"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_d4qp2"]
-[ext_resource type="Script" path="res://rooms/room_2.gd" id="1_vr8gs"]
 [ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="2_rkvim"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="4_uuts7"]
 [ext_resource type="PackedScene" uid="uid://jo03pmipjjs1" path="res://entities/interactables/door1.tscn" id="6_bilo5"]
@@ -132,7 +131,6 @@ func _on_body_entered(body):
 size = Vector2(51, 81)
 
 [node name="Room2" type="Node2D"]
-script = ExtResource("1_vr8gs")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_d4qp2")
@@ -158,14 +156,15 @@ script = SubResource("GDScript_vmdch")
 position = Vector2(302, 517)
 
 [node name="Door1" parent="." instance=ExtResource("6_bilo5")]
-position = Vector2(1607, 521)
+position = Vector2(1610, 520)
 script = ExtResource("7_yglnn")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 script = ExtResource("8_wgiif")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1603.5, 526)
+position = Vector2(1605, 521)
 shape = SubResource("RectangleShape2D_bnfa5")
 debug_color = Color(0.976471, 0, 0.419608, 0.419608)
 
@@ -173,7 +172,7 @@ debug_color = Color(0.976471, 0, 0.419608, 0.419608)
 position = Vector2(1360, 392)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(232, 522)
+position = Vector2(230, 520)
 scale = Vector2(5, 5)
 texture = ExtResource("12_8qbv6")
 hframes = 9
