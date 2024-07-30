@@ -37,9 +37,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func shift_vial_display():
 	vial_focus += 1
 	if vial_focus == 2:
-		result = mix1 + mix2
-		new_element_select(result)
-		toggle_mix_menu_visibility()
+		if mix1 == mix2:
+			toggle_mix_menu_visibility()
+		else:
+			result = mix1 + mix2
+			new_element_select(result)
+			toggle_mix_menu_visibility()
 
 func new_element_select(value: int) -> void:
 	match value:
@@ -68,6 +71,9 @@ func clear_menu():
 	vial_display_1.texture = null
 	vial_display_2.texture = null
 	vial_focus = 0
+	mix1 = 0
+	mix2 = 0
+	result = 0
 
 func update_vial_display(value: int, display: TextureRect):
 	match value:
