@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bd6d45p0xg8q7"]
+[gd_scene load_steps=10 format=3 uid="uid://bd6d45p0xg8q7"]
 
+[ext_resource type="Script" path="res://UI/menus/master_mix_menu.gd" id="1_7fhks"]
 [ext_resource type="Texture2D" uid="uid://bocvyqunbm3v6" path="res://assets/art/items/red_vial.png" id="1_8tvtm"]
 [ext_resource type="Texture2D" uid="uid://bdu18v3lprylu" path="res://assets/art/items/via_pressed.png" id="2_f1vam"]
 [ext_resource type="Texture2D" uid="uid://dnhnh5xvnwvav" path="res://assets/art/items/green_vial.png" id="2_ngwvq"]
@@ -18,6 +19,7 @@ outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
 [node name="MasterMixMenu" type="CanvasLayer"]
+script = ExtResource("1_7fhks")
 
 [node name="BackgroundPanel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.513726)

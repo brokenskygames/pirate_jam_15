@@ -14,7 +14,6 @@ func _physics_process(delta):
 			
 			
 
-
 func _on_switch_switch_1():
 	opening1 = true # Replace with function body.
 	position_old = position.x

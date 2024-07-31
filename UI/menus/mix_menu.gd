@@ -3,6 +3,7 @@ class_name MixMenu
 
 signal mix_menu_opened
 signal mix_menu_closed
+signal master_mix_menu
 
 var vial_focus:= 0
 var is_menu_open:= false
@@ -10,6 +11,8 @@ var is_menu_open:= false
 var mix1: int
 var mix2: int
 var result: int
+
+var kill_boss = true
 
 @onready var player = get_tree().get_first_node_in_group("player")
 
@@ -29,7 +32,11 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_mix_menu"):
-		toggle_mix_menu_visibility()
+		if kill_boss == false:
+			toggle_mix_menu_visibility()
+		else:
+			emit_signal("master_mix_menu")
+			player.equip_item = 10
 	if visible:
 		if event.is_action_pressed("use_vial"):
 			shift_vial_display()
@@ -69,6 +76,8 @@ func toggle_mix_menu_visibility():
 	else:
 		is_menu_open = false
 		mix_menu_closed.emit()
+
+
 
 func clear_menu():
 	vial_display_1.texture = null

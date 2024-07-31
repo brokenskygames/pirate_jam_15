@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://iy45otdpkibt"]
+[gd_scene load_steps=22 format=3 uid="uid://iy45otdpkibt"]
 
 [ext_resource type="PackedScene" uid="uid://cfm2vw1xaaxi3" path="res://effects/darkness_mask.tscn" id="1_l1fyu"]
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_lmbuj"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="5_ih12e"]
 [ext_resource type="PackedScene" uid="uid://dhm4hcktrvogd" path="res://effects/lava_light.tscn" id="5_xdt2b"]
 [ext_resource type="Script" path="res://rooms/Area2D_4.gd" id="6_65ydi"]
-[ext_resource type="PackedScene" uid="uid://denc4kxl7xugw" path="res://entities/interactables/key.tscn" id="7_1vfs6"]
 [ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="10_c7tdr"]
 [ext_resource type="PackedScene" uid="uid://dtcy0c6qcsbjw" path="res://entities/interactables/door3.tscn" id="11_7vgbp"]
 [ext_resource type="PackedScene" uid="uid://cfb7u18ckq2tm" path="res://UI/menus/mix_menu.tscn" id="11_nufo8"]
@@ -183,9 +182,6 @@ script = ExtResource("6_65ydi")
 position = Vector2(1002, 162)
 shape = SubResource("RectangleShape2D_bnfa5")
 debug_color = Color(0.976471, 0, 0.419608, 0.419608)
-
-[node name="Key" parent="." instance=ExtResource("7_1vfs6")]
-position = Vector2(1505, 388)
 
 [node name="UI" type="Node" parent="."]
 

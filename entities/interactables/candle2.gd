@@ -10,6 +10,10 @@ var candle_lit := false
 #func _unhandled_input(event: InputEvent) -> void:
 	#if event.is_action_pressed("use_vial"):
 		#light_candle()
+func _ready():
+	light.set_enabled(true)
+	candle_lit=true
+	animation_player.play("lit")
 
 func light_candle():
 	animation_player.play("lit")
