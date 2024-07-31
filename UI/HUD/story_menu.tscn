@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvldptl25nrq"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_7oxs1"]
+
+[node name="StoryMenu" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("Texture2DRD_7oxs1")
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/CenterContainer"]
+custom_minimum_size = Vector2(1600, 900)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "faeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafea"
+fit_content = true
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = -133.0
+offset_right = -64.0
+offset_bottom = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Exit
+"
