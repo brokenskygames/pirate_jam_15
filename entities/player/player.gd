@@ -17,6 +17,8 @@ var lightning = preload("res://entities/elements/lightning.tscn")
 var mudball = preload("res://entities/elements/mudball.tscn")
 var brick = preload("res://entities/elements/brick.tscn")
 
+var shadow = preload("res://entities/elements/shadow.tscn")
+
 const SPEED = 400.0
 var direction : Vector2 = Vector2.ZERO
 var dir_facing : Vector2 = Vector2.ZERO
@@ -62,7 +64,6 @@ func get_input():
 		use_vial()
 
 func use_vial():
-	#equip_item = 8
 	if equip_item == 1:
 		var fire_vial = fire.instantiate()
 		fire_vial.start(dir_facing,global_position)
@@ -97,6 +98,11 @@ func use_vial():
 		var brick_vial = brick.instantiate()
 		brick_vial.start(dir_facing,global_position)
 		get_tree().root.add_child(brick_vial)
+		
+	if equip_item == 10:
+		var shadow_vial = shadow.instantiate()
+		shadow_vial.start(dir_facing,global_position)
+		get_tree().root.add_child(shadow_vial)
 
 
 

@@ -136,18 +136,33 @@ volume_db = 10.0
 autoplay = true
 
 [node name="Candle" parent="." instance=ExtResource("17_ptx58")]
-position = Vector2(902, 265)
+position = Vector2(500, 250)
 script = ExtResource("10_plj0f")
 
 [node name="Candle2" parent="." instance=ExtResource("17_ptx58")]
-position = Vector2(483, 565)
+position = Vector2(900, 250)
 script = ExtResource("10_plj0f")
 
 [node name="Candle3" parent="." instance=ExtResource("17_ptx58")]
-position = Vector2(483, 271)
+position = Vector2(1300, 250)
+script = ExtResource("10_plj0f")
+
+[node name="Candle4" parent="." instance=ExtResource("17_ptx58")]
+position = Vector2(500, 780)
+script = ExtResource("10_plj0f")
+
+[node name="Candle5" parent="." instance=ExtResource("17_ptx58")]
+position = Vector2(900, 780)
+script = ExtResource("10_plj0f")
+
+[node name="Candle6" parent="." instance=ExtResource("17_ptx58")]
+position = Vector2(1300, 780)
 script = ExtResource("10_plj0f")
 
 [node name="Boss" parent="." instance=ExtResource("10_uidjn")]
 position = Vector2(198, 502)
 
+[node name="end_game" type="Timer" parent="."]
+
 [connection signal="master_mix_menu" from="UI/MixMenu" to="UI/MasterMixMenu" method="_on_mix_menu_master_mix_menu"]
+[connection signal="timeout" from="end_game" to="Boss" method="_on_end_game_timeout"]

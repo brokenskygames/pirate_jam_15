@@ -12,7 +12,7 @@ var mix1: int
 var mix2: int
 var result: int
 
-var kill_boss = true
+var kill_boss = false
 
 @onready var player = get_tree().get_first_node_in_group("player")
 

@@ -271,7 +271,7 @@ position = Vector2(1160, 205)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="shark_area"]
-polygon = PackedVector2Array(968, 247, 968, 470, 1348, 470, 1346, 248, 1295, 248, 1294, 410, 1029, 410, 1031, 244)
+polygon = PackedVector2Array(968, 247, 968, 453, 1348, 456, 1346, 248, 1295, 248, 1294, 424, 1029, 422, 1031, 244)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ays44")
