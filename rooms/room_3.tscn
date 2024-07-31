@@ -238,10 +238,9 @@ shape = SubResource("RectangleShape2D_tfduv")
 
 [node name="UI" type="Node" parent="."]
 
-[node name="HUD" parent="UI" node_paths=PackedStringArray("mix_menu") instance=ExtResource("11_qgbga")]
+[node name="HUD" parent="UI" instance=ExtResource("11_qgbga")]
 process_mode = 1
 layer = 8
-mix_menu = NodePath("../MixMenu")
 
 [node name="MixMenu" parent="UI" instance=ExtResource("12_qg3us")]
 process_mode = 3

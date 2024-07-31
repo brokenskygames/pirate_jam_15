@@ -114,10 +114,9 @@ position = Vector2(1474, 831)
 
 [node name="UI" type="Node" parent="."]
 
-[node name="HUD" parent="UI" node_paths=PackedStringArray("mix_menu") instance=ExtResource("10_fxcpf")]
+[node name="HUD" parent="UI" instance=ExtResource("10_fxcpf")]
 process_mode = 1
 layer = 8
-mix_menu = NodePath("../MixMenu")
 
 [node name="MixMenu" parent="UI" instance=ExtResource("11_jsp18")]
 process_mode = 3
