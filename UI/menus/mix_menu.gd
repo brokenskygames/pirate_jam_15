@@ -77,8 +77,6 @@ func toggle_mix_menu_visibility():
 		is_menu_open = false
 		mix_menu_closed.emit()
 
-
-
 func clear_menu():
 	vial_display_1.texture = null
 	vial_display_2.texture = null

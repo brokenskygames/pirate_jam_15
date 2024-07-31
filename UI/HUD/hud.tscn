@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://477gakkela1w"]
+[gd_scene load_steps=9 format=3 uid="uid://477gakkela1w"]
 
 [ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_6av76"]
 [ext_resource type="Texture2D" uid="uid://bocvyqunbm3v6" path="res://assets/art/items/red_vial.png" id="2_rqvgt"]
+[ext_resource type="Texture2D" uid="uid://bxwx11k1u87ej" path="res://assets/texture/item_frame.png" id="3_lo0vu"]
 [ext_resource type="Texture2D" uid="uid://c0xv1o06cev0t" path="res://assets/art/items/blue_vial.png" id="5_tmcuc"]
 [ext_resource type="Texture2D" uid="uid://dnhnh5xvnwvav" path="res://assets/art/items/green_vial.png" id="6_rgrq4"]
 [ext_resource type="Texture2D" uid="uid://xyn6iwn6pqu8" path="res://assets/art/items/brown_vial.png" id="7_sux4n"]
@@ -71,6 +72,18 @@ grow_vertical = 0
 text = "1"
 fit_content = true
 
+[node name="Frame1" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VialPanel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lo0vu")
+stretch_mode = 5
+
 [node name="VialPanel2" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -101,6 +114,18 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "2"
 fit_content = true
+
+[node name="Frame2" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VialPanel2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lo0vu")
+stretch_mode = 5
 
 [node name="VialPanel3" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
@@ -133,6 +158,18 @@ grow_vertical = 0
 text = "3"
 fit_content = true
 
+[node name="Frame3" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VialPanel3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lo0vu")
+stretch_mode = 5
+
 [node name="VialPanel4" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -163,6 +200,18 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "4"
 fit_content = true
+
+[node name="Frame4" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VialPanel4"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lo0vu")
+stretch_mode = 5
 
 [node name="VialPanel5" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -197,6 +246,18 @@ grow_vertical = 0
 text = "5"
 fit_content = true
 
+[node name="Frame5" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VialPanel5"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lo0vu")
+stretch_mode = 5
+
 [node name="VialPanel6" type="Panel" parent="Panel/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
@@ -227,3 +288,15 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "R"
 fit_content = true
+
+[node name="Frame6" type="TextureRect" parent="Panel/MarginContainer/HBoxContainer/VialPanel6"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lo0vu")
+stretch_mode = 5
