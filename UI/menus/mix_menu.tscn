@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfb7u18ckq2tm"]
+[gd_scene load_steps=6 format=3 uid="uid://cfb7u18ckq2tm"]
 
 [ext_resource type="Script" path="res://UI/menus/mix_menu.gd" id="1_hff7h"]
 [ext_resource type="Texture2D" uid="uid://dus5aya120jhq" path="res://assets/art/items/vial.png" id="2_x57td"]
@@ -10,6 +10,10 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_673op"]
 font_size = 60
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xp5h2"]
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
@@ -125,3 +129,11 @@ focus_neighbor_left = NodePath("../../Mix1/VialDisplay1")
 focus_neighbor_right = NodePath("../../Mix1/VialDisplay1")
 texture = ExtResource("2_x57td")
 stretch_mode = 5
+
+[node name="InstructionLable" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Press Space to confirm Selection"
+label_settings = SubResource("LabelSettings_xp5h2")
+horizontal_alignment = 1
+vertical_alignment = 1
