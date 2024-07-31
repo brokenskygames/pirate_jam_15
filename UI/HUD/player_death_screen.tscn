@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfsy0x7kwubks"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rp8yq"]
+font_size = 60
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="PlayerDeathScreen" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.572549)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer"]
+layout_mode = 2
+text = "You Died"
+label_settings = SubResource("LabelSettings_rp8yq")
+horizontal_alignment = 1
+vertical_alignment = 1
