@@ -238,10 +238,9 @@ shape = SubResource("RectangleShape2D_tfduv")
 
 [node name="UI" type="Node" parent="."]
 
-[node name="HUD" parent="UI" node_paths=PackedStringArray("mix_menu") instance=ExtResource("11_qgbga")]
+[node name="HUD" parent="UI" instance=ExtResource("11_qgbga")]
 process_mode = 1
 layer = 8
-mix_menu = NodePath("../MixMenu")
 
 [node name="MixMenu" parent="UI" instance=ExtResource("12_qg3us")]
 process_mode = 3
@@ -271,7 +270,7 @@ position = Vector2(1160, 205)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="shark_area"]
-polygon = PackedVector2Array(968, 247, 968, 470, 1348, 470, 1346, 248, 1295, 248, 1294, 410, 1029, 410, 1031, 244)
+polygon = PackedVector2Array(968, 247, 968, 453, 1348, 456, 1346, 248, 1295, 248, 1294, 424, 1029, 422, 1031, 244)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ays44")

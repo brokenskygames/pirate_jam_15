@@ -185,10 +185,9 @@ debug_color = Color(0.976471, 0, 0.419608, 0.419608)
 
 [node name="UI" type="Node" parent="."]
 
-[node name="HUD" parent="UI" node_paths=PackedStringArray("mix_menu") instance=ExtResource("10_c7tdr")]
+[node name="HUD" parent="UI" instance=ExtResource("10_c7tdr")]
 process_mode = 1
 layer = 8
-mix_menu = NodePath("../MixMenu")
 
 [node name="MixMenu" parent="UI" instance=ExtResource("11_nufo8")]
 process_mode = 3

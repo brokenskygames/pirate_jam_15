@@ -12,7 +12,9 @@ func _on_body_entered(body):
 func _on_shark_area_body_entered(body):
 	if body.name.contains("Player"):
 		if is_safe == false:
-			get_tree().change_scene_to_file("res://rooms/room_3.tscn")
+			for brick in get_tree().get_nodes_in_group("brick"):
+				brick.queue_free()
+			get_tree().reload_current_scene()
 
 
 func _on_path_2d_dead_shark():

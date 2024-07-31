@@ -30,7 +30,7 @@ _data = {
 "brick": SubResource("Animation_rvwny")
 }
 
-[node name="Brick" type="CharacterBody2D"]
+[node name="Brick" type="CharacterBody2D" groups=["brick"]]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_g27iy")
