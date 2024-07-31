@@ -26,7 +26,6 @@ func _on_area_2d_area_entered(area):
 	if area.name.contains("Boss"):
 		win = true
 		$end_game.start(10)
-		print("hit")
 	
 
 

@@ -21,6 +21,12 @@ func _ready() -> void:
 
 func show_shadow_vial():
 	vial_panel_5.show()
+	show_frame(frame_5)
+	hide_frame(frame_1)
+	hide_frame(frame_2)
+	hide_frame(frame_3)
+	hide_frame(frame_4)
+	hide_frame(frame_6)
 
 func hide_shadow_vial():
 	vial_panel_5.hide()
@@ -92,7 +98,13 @@ func _on_mix_menu_opened()-> void:
 	highlight_mix_menu()
 
 func _on_mix_menu_closed()->void:
-	pass
+	show_frame(frame_6)
+	hide_frame(frame_1)
+	hide_frame(frame_2)
+	hide_frame(frame_3)
+	hide_frame(frame_4)
+	hide_frame(frame_5)
 
 func _on_master_mix_menu():
-	highlight_mix_menu()
+	show_shadow_vial()
+	

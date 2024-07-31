@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://4cbha3n8ltq8"]
+[gd_scene load_steps=3 format=3 uid="uid://u1p1evq7v6hc"]
 
-[ext_resource type="Script" path="res://UI/HUD/player_death_screen.gd" id="1_64rft"]
+[ext_resource type="Script" path="res://UI/HUD/player_death_screen.gd" id="1_664ih"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rp8yq"]
 font_size = 60
@@ -9,7 +9,7 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="PlayerDeathScreen" type="CanvasLayer"]
-script = ExtResource("1_64rft")
+script = ExtResource("1_664ih")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.572549)

@@ -13,6 +13,7 @@ var mix2: int
 var result: int
 
 var kill_boss = false
+var darkness_counter = 0
 
 @onready var player = get_tree().get_first_node_in_group("player")
 
@@ -95,6 +96,8 @@ func update_vial_display(value: int, display: TextureRect):
 			display.texture = GREEN_VIAL
 		8: 
 			display.texture = BROWN_VIAL
+		20: 
+			display.texture = PURPLE_VIAL
 
 func _on_changed_vial(value: int) -> void:
 	if is_menu_open:
@@ -105,3 +108,39 @@ func _on_changed_vial(value: int) -> void:
 			1:
 				update_vial_display(value, vial_display_2)
 				mix2 = value
+
+
+func _on_candle_darkness():
+	darkness_counter += 1
+	if darkness_counter >= 6:
+		kill_boss = true
+
+func _on_candle_2_darkness():
+	darkness_counter += 1
+	if darkness_counter >= 6:
+		kill_boss = true
+	
+func _on_candle_3_darkness():
+	darkness_counter += 1
+	if darkness_counter >= 6:
+		kill_boss = true
+	
+func _on_candle_4_darkness():
+	darkness_counter += 1
+	if darkness_counter >= 6:
+		kill_boss = true
+	
+func _on_candle_5_darkness():
+	darkness_counter += 1
+	if darkness_counter >= 6:
+		kill_boss = true
+	
+func _on_candle_6_darkness():
+	darkness_counter += 1
+	if darkness_counter >= 6:
+		kill_boss = true
+
+func _on_boss_darkness():
+	darkness_counter += 1
+	if darkness_counter >= 6:
+		kill_boss = true

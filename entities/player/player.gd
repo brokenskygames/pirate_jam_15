@@ -59,8 +59,10 @@ func get_input():
 	if Input.is_action_just_pressed("vial_4"):
 		equip_item = 4
 		changed_vial.emit(8)
+	if Input.is_action_just_pressed("vial_5"):
+		equip_item = 10
+		changed_vial.emit(20)
 	if Input.is_action_just_pressed("use_vial") and can_act:
-		print("shoot")
 		use_vial()
 
 func use_vial():

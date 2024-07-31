@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://4cbha3n8ltq8"]
+[gd_scene load_steps=3 format=3 uid="uid://bnm2tt3x7oc8o"]
 
-[ext_resource type="Script" path="res://UI/HUD/player_death_screen.gd" id="1_64rft"]
+[ext_resource type="Script" path="res://UI/HUD/player_death_screen_shark.gd" id="1_uf68o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rp8yq"]
 font_size = 60
@@ -9,7 +9,7 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [node name="PlayerDeathScreen" type="CanvasLayer"]
-script = ExtResource("1_64rft")
+script = ExtResource("1_uf68o")
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color(1, 1, 1, 0.572549)
@@ -29,7 +29,8 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Panel/CenterContainer"]
 layout_mode = 2
-text = "You Died"
+text = "You Died
+The Shark got you"
 label_settings = SubResource("LabelSettings_rp8yq")
 horizontal_alignment = 1
 vertical_alignment = 1

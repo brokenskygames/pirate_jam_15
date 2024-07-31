@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cixsx5f02prhv"]
+[gd_scene load_steps=8 format=3 uid="uid://cixsx5f02prhv"]
 
 [ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="1_e6ugc"]
 [ext_resource type="Script" path="res://entities/elements/mudball.gd" id="1_q7yr8"]
+[ext_resource type="AudioStream" uid="uid://d0umjcsvbx6gr" path="res://music/SFX/Throw Mudball SFX.mp3" id="3_stusd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ehhy"]
 radius = 20.0
@@ -65,3 +66,8 @@ shape = SubResource("CircleShape2D_4ehhy")
 libraries = {
 "": SubResource("AnimationLibrary_ksc4w")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_stusd")
+volume_db = -20.0
+autoplay = true

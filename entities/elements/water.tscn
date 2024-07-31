@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh1iv1qxl0k6h"]
+[gd_scene load_steps=7 format=3 uid="uid://bh1iv1qxl0k6h"]
 
 [ext_resource type="Script" path="res://entities/elements/water.gd" id="1_f3hoy"]
 [ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="1_hahui"]
+[ext_resource type="AudioStream" uid="uid://mov3h4y38ot2" path="res://music/SFX/Fill Water SFX.mp3" id="3_71ehq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3wgvx"]
 radius = 37.1214
@@ -59,3 +60,7 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_n8isw")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_71ehq")
+autoplay = true

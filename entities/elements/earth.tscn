@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxs3o406g1mms"]
+[gd_scene load_steps=8 format=3 uid="uid://cxs3o406g1mms"]
 
 [ext_resource type="Script" path="res://entities/elements/earth.gd" id="1_jtib4"]
 [ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="2_baj8x"]
+[ext_resource type="AudioStream" uid="uid://crpt0f410lswf" path="res://music/SFX/Earth SFX.mp3" id="3_onj7i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xjxs2"]
 radius = 14.0
@@ -74,3 +75,8 @@ shape = SubResource("CircleShape2D_xjxs2")
 libraries = {
 "": SubResource("AnimationLibrary_ea0lw")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_onj7i")
+volume_db = -20.0
+autoplay = true

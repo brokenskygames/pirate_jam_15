@@ -13,12 +13,11 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print(body.name)
 	if body.name.contains("Candle"):
 		emit_signal("darkness")
 		body.queue_free()
 	if body.name.contains("Player"):
-		print("kill")
+		get_tree().change_scene_to_file("res://UI/HUD/player_death_screen.tscn")
 
 
 

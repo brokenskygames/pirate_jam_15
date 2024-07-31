@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://01mq5cak3ekr"]
+[gd_scene load_steps=7 format=3 uid="uid://01mq5cak3ekr"]
 
 [ext_resource type="Script" path="res://entities/elements/wind.gd" id="1_b3pbv"]
 [ext_resource type="Texture2D" uid="uid://bomh4lorjl2vr" path="res://assets/art/elemental_effects/elemental_effects.png" id="2_20843"]
+[ext_resource type="AudioStream" uid="uid://4fedlrmgdm48" path="res://music/SFX/Wind SFX.mp3" id="3_ikwe4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl4a7"]
 size = Vector2(48, 75)
@@ -47,3 +48,7 @@ shape = SubResource("RectangleShape2D_fl4a7")
 libraries = {
 "": SubResource("AnimationLibrary_8s6tp")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ikwe4")
+autoplay = true

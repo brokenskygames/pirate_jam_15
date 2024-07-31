@@ -14,7 +14,7 @@ func _on_shark_area_body_entered(body):
 		if is_safe == false:
 			for brick in get_tree().get_nodes_in_group("brick"):
 				brick.queue_free()
-			get_tree().reload_current_scene()
+			get_tree().change_scene_to_file("res://UI/HUD/player_death_screen_shark.tscn")
 
 
 func _on_path_2d_dead_shark():

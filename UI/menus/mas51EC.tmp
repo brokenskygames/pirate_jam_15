@@ -1,0 +1,196 @@
+[gd_scene load_steps=10 format=3 uid="uid://bd6d45p0xg8q7"]
+
+[ext_resource type="Script" path="res://UI/menus/master_mix_menu.gd" id="1_7fhks"]
+[ext_resource type="Texture2D" uid="uid://bocvyqunbm3v6" path="res://assets/art/items/red_vial.png" id="1_8tvtm"]
+[ext_resource type="Texture2D" uid="uid://bdu18v3lprylu" path="res://assets/art/items/via_pressed.png" id="2_f1vam"]
+[ext_resource type="Texture2D" uid="uid://dnhnh5xvnwvav" path="res://assets/art/items/green_vial.png" id="2_ngwvq"]
+[ext_resource type="Texture2D" uid="uid://xyn6iwn6pqu8" path="res://assets/art/items/brown_vial.png" id="3_8tyt1"]
+[ext_resource type="Texture2D" uid="uid://dp6v4hfwa7e3u" path="res://assets/art/items/vial_hover.png" id="3_e8yry"]
+[ext_resource type="Texture2D" uid="uid://c0xv1o06cev0t" path="res://assets/art/items/blue_vial.png" id="4_tb5sj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8thm"]
+font_size = 30
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_typuu"]
+font_size = 60
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MasterMixMenu" type="CanvasLayer"]
+script = ExtResource("1_7fhks")
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.513726)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BackgroundPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -641.0
+offset_bottom = -362.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+
+[node name="Panel" type="Panel" parent="BackgroundPanel/CenterContainer"]
+custom_minimum_size = Vector2(400, 330)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BackgroundPanel/CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Panel" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Master Mixer"
+label_settings = SubResource("LabelSettings_a8thm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="EmptySpace1" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel1" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="FireVial" type="TextureButton" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer/Panel1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_8tvtm")
+texture_pressed = ExtResource("2_f1vam")
+texture_hover = ExtResource("3_e8yry")
+stretch_mode = 0
+
+[node name="EmptySpace2" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel2" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AirVal" type="TextureButton" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_ngwvq")
+texture_pressed = ExtResource("2_f1vam")
+texture_hover = ExtResource("3_e8yry")
+stretch_mode = 0
+
+[node name="PlusMark" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer/PlusMark"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("LabelSettings_typuu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="EarthVial" type="TextureButton" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_8tyt1")
+texture_pressed = ExtResource("2_f1vam")
+texture_hover = ExtResource("3_e8yry")
+stretch_mode = 0
+
+[node name="EmptySpace4" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel4" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="WaterVial" type="TextureButton" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_tb5sj")
+texture_pressed = ExtResource("2_f1vam")
+texture_hover = ExtResource("3_e8yry")
+stretch_mode = 0
+
+[node name="EmptySpace5" type="Panel" parent="BackgroundPanel/CenterContainer/Panel/CenterContainer/VBoxContainer/GridContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

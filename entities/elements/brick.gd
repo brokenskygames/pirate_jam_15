@@ -21,8 +21,11 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_area_2d_body_entered(body):
-	print(body.name)
 	if body.name.contains("Player"):
 		body.set_collision_mask_value(7,false)
 
 
+
+
+func _on_timer_timeout():
+	queue_free()
