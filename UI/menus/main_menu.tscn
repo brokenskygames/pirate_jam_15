@@ -292,6 +292,7 @@ text = "Exit"
 
 [node name="StoryMenu" parent="." instance=ExtResource("3_wu2dg")]
 unique_name_in_owner = true
+visible = false
 
 [node name="Root" type="Node2D" parent="."]
 position = Vector2(964, 278)
