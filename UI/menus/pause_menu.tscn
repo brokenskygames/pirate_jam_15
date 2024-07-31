@@ -59,6 +59,7 @@ theme_override_font_sizes/font_size = 24
 text = "Restart"
 
 [node name="OptionsButton" type="Button" parent="CenterContainer/BGMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Options"
