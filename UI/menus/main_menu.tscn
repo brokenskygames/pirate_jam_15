@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dok8emds0xdxk"]
+[gd_scene load_steps=13 format=3 uid="uid://dok8emds0xdxk"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_jcfpm"]
 [ext_resource type="Script" path="res://UI/menus/main_menu.gd" id="1_sj5tw"]
@@ -13,6 +13,8 @@ font_size = 120
 
 [sub_resource type="LabelSettings" id="LabelSettings_ygnpl"]
 font_size = 60
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_7oxs1"]
 
 [sub_resource type="Animation" id="Animation_ndfun"]
 length = 0.001
@@ -239,6 +241,7 @@ vertical_alignment = 1
 
 [node name="ControlMenu" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="ControlMenu"]
 modulate = Color(0, 0, 0, 1)
@@ -288,6 +291,51 @@ size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
+[node name="StoryMenu" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="TextureRect" type="TextureRect" parent="StoryMenu"]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("Texture2DRD_7oxs1")
+
+[node name="CenterContainer" type="CenterContainer" parent="StoryMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StoryMenu/TextureRect/CenterContainer"]
+custom_minimum_size = Vector2(1600, 900)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "faeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafea"
+fit_content = true
+
+[node name="Button" type="Button" parent="StoryMenu/TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -179.0
+offset_top = -133.0
+offset_right = -64.0
+offset_bottom = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Exit
+"
+
 [node name="Root" type="Node2D" parent="."]
 position = Vector2(964, 278)
 scale = Vector2(5, 5)
@@ -334,6 +382,8 @@ volume_db = -12.0
 autoplay = true
 
 [connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/StoryButton" to="." method="_on_story_button_pressed"]
 [connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="ControlMenu/TextureRect/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="StoryMenu/TextureRect/Button" to="." method="_on_button_pressed"]
