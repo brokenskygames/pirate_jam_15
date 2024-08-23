@@ -284,13 +284,6 @@ size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
-<<<<<<< HEAD
-=======
-[node name="StoryMenu" parent="." instance=ExtResource("3_wu2dg")]
-unique_name_in_owner = true
-visible = false
-
->>>>>>> 465a0a2817a2d55067665f2fbeb8f58841a62e17
 [node name="Root" type="Node2D" parent="."]
 position = Vector2(964, 278)
 scale = Vector2(5, 5)
