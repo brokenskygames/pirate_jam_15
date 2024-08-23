@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvldptl25nrq"]
+[gd_scene load_steps=4 format=3 uid="uid://dvldptl25nrq"]
+
+[ext_resource type="Script" path="res://UI/HUD/story_menu.gd" id="1_qivxu"]
+[ext_resource type="AudioStream" uid="uid://mxwc0ubqalur" path="res://music/main_ost/Vial Elements - Primero.mp3" id="2_xfaaq"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_7oxs1"]
 
 [node name="StoryMenu" type="CanvasLayer"]
+script = ExtResource("1_qivxu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
@@ -25,8 +29,14 @@ grow_vertical = 2
 custom_minimum_size = Vector2(1600, 900)
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 60
-text = "faeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafea"
+theme_override_font_sizes/normal_font_size = 45
+text = "The Four Elements form the foundations of this world. By distilling these elements into their purest essences, alchemists transform mundane matter in their pursuit of wealth and fame. However, the purified elements are volatile and there are strict rules in place due to the risk.
+
+The Shadow Alchemist is infamous for delving into both novel and taboo experiments without fear of either costs or consequences. He is a master of the craft who desires only to satisfy his curiosity; alchemy is a means to an end where the ends always justify the means.
+
+His research has led him to an ancient laboratory that may contain the Void Element. A substance that shouldn't exist, pure Void could allow the four elements to mix and interact in ways beyond the alchemic limits of matter. With vials in hand, the Alchemist descends.
+
+"
 fit_content = true
 
 [node name="Button" type="Button" parent="TextureRect"]
@@ -43,5 +53,11 @@ offset_bottom = -42.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 50
-text = "Exit
+text = "Play
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xfaaq")
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

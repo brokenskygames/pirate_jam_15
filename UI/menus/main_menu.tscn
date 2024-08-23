@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dok8emds0xdxk"]
+[gd_scene load_steps=12 format=3 uid="uid://dok8emds0xdxk"]
 
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="1_jcfpm"]
 [ext_resource type="Script" path="res://UI/menus/main_menu.gd" id="1_sj5tw"]
 [ext_resource type="Texture2D" uid="uid://xmjyfyuvxtbo" path="res://assets/art/player/plague_dr_title.png" id="3_noiff"]
-[ext_resource type="PackedScene" uid="uid://dvldptl25nrq" path="res://UI/HUD/story_menu.tscn" id="3_wu2dg"]
 [ext_resource type="Texture2D" uid="uid://bbmorkf4p4s2h" path="res://assets/art/items/element_icons.png" id="4_e4tgi"]
 [ext_resource type="AudioStream" uid="uid://s0f5k4886jm1" path="res://music/main_ost/Vial Elements - Main menu.mp3" id="5_5fojy"]
 
@@ -194,11 +193,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Start"
 
-[node name="StoryButton" type="Button" parent="UI/Control/ButtonBackgroundPanel/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "Story"
-
 [node name="ControlsButton" type="Button" parent="UI/Control/ButtonBackgroundPanel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
@@ -290,9 +284,6 @@ size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
-[node name="StoryMenu" parent="." instance=ExtResource("3_wu2dg")]
-unique_name_in_owner = true
-
 [node name="Root" type="Node2D" parent="."]
 position = Vector2(964, 278)
 scale = Vector2(5, 5)
@@ -339,7 +330,6 @@ volume_db = -12.0
 autoplay = true
 
 [connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/StoryButton" to="." method="_on_story_button_pressed"]
 [connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="UI/Control/ButtonBackgroundPanel/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="ControlMenu/TextureRect/CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

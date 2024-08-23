@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyupeova5gxqn"]
+[gd_scene load_steps=4 format=3 uid="uid://cyupeova5gxqn"]
+
+[ext_resource type="Script" path="res://UI/HUD/epilogue_screen.gd" id="1_nog3e"]
+[ext_resource type="AudioStream" uid="uid://ctyj00un0vm42" path="res://music/main_ost/Vial Elements - End.mp3" id="2_ruca1"]
 
 [sub_resource type="Texture2DRD" id="Texture2DRD_7oxs1"]
 
 [node name="EpilogueScreen" type="CanvasLayer"]
+script = ExtResource("1_nog3e")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0, 0, 0, 1)
@@ -26,7 +30,9 @@ custom_minimum_size = Vector2(1600, 900)
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 60
-text = "faeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafeafaeafea"
+text = "As the ancient crucible crumbles around him, the alchemist is forced to combine all four vials at once. From the unstable mixture erupts elemental Shadow, the dark matter of Creation. As the opposing element, it renders the Void inert. The Shadow Alchemist claims his prize.
+
+Now with Void, the essence of Potential in hand, the Shadow Alchemist is no longer limited by the laws of nature or indeed those of man. A new world dawns on dreamlike works of otherworldly beauty alongside nightmarish horrors beyond any the world has known."
 fit_content = true
 
 [node name="Button" type="Button" parent="TextureRect"]
@@ -45,3 +51,9 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Exit
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ruca1")
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

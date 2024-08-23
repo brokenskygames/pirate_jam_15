@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tl00cxfgdw3j"
+path="res://.godot/imported/Vial Elements - Null.mp3-e164bd9b0cfb98daaa4d9bca8ea25fcb.mp3str"
+
+[deps]
+
+source_file="res://music/main_ost/Vial Elements - Null.mp3"
+dest_files=["res://.godot/imported/Vial Elements - Null.mp3-e164bd9b0cfb98daaa4d9bca8ea25fcb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

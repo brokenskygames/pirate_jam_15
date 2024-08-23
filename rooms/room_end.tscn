@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://sd6eo8r4wj67" path="res://assets/art/backgrounds/blank_background.png" id="2_11fhv"]
 [ext_resource type="Texture2D" uid="uid://2yd1j2vpr26r" path="res://assets/art/tilesets/dungeon_tiles_pirateGJ2.png" id="3_wtigj"]
 [ext_resource type="PackedScene" uid="uid://qyrp6fb3bmnd" path="res://entities/player/player.tscn" id="7_cm7h8"]
-[ext_resource type="AudioStream" uid="uid://ctyj00un0vm42" path="res://music/main_ost/Vial Elements - End.mp3" id="8_o2dju"]
 [ext_resource type="PackedScene" uid="uid://bd6d45p0xg8q7" path="res://UI/menus/master_mix_menu.tscn" id="8_ocdvv"]
+[ext_resource type="AudioStream" uid="uid://tl00cxfgdw3j" path="res://music/main_ost/Vial Elements - Null.mp3" id="9_gspqs"]
 [ext_resource type="PackedScene" uid="uid://477gakkela1w" path="res://UI/HUD/hud.tscn" id="10_fxcpf"]
 [ext_resource type="Script" path="res://entities/interactables/candle2.gd" id="10_plj0f"]
 [ext_resource type="PackedScene" uid="uid://owox0qn320q1" path="res://entities/player/boss.tscn" id="10_uidjn"]
@@ -130,8 +130,8 @@ visible = false
 visible = false
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_o2dju")
-volume_db = 10.0
+stream = ExtResource("9_gspqs")
+volume_db = -5.0
 autoplay = true
 
 [node name="Candle" parent="." instance=ExtResource("17_ptx58")]

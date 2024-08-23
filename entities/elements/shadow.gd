@@ -30,7 +30,7 @@ func _on_area_2d_area_entered(area):
 
 
 func _on_end_game_timeout():
-	get_tree().change_scene_to_file("res://UI/menus/main_menu.tscn")
+	get_tree().change_scene_to_file("res://UI/HUD/epilogue_screen.tscn")
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
